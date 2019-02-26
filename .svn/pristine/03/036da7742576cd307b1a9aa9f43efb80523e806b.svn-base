@@ -1,0 +1,55 @@
+<div fxFlex fxLayout="column">
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center" style="background-color:#edf0f3; height:55px;">
+    <span class="color-toolbar-header">Upload Document</span>
+    <mat-icon (click)="onNoClick()" class="color" style="cursor: pointer">&#xE5CD;</mat-icon>
+  </mat-toolbar>
+  <form    fxLayout="column" [formGroup]="form" style="padding:20px;">
+    <div fxFlex="90" fxLayout="row">
+      <div  fxLayout="column" fxFlex="30" >
+        <span style="font-size:16px; margin-bottom:10px">Save file into</span>
+        <div class="filterbox">
+         
+           <mat-select   id="resporcescategory"  placeholder="" [(value)]="categorySelection">
+            <mat-option value = "1" >Policies</mat-option>
+            <mat-option value = "2">Forms</mat-option>
+          </mat-select> 
+         
+        
+       
+        </div>
+     
+      
+      </div>
+
+       <div fxFlex="70" fxLayout="column" style="box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);">
+
+        <div fxFlex="80" fxLayout="row" (click)="openInput()" fxLayoutAlign="space-around center">
+         
+          <div>
+              <input type="file" id="upload" style="display:none" (change)="onFileChange($event)"  multiple name="fileData" >
+              <img [src]="'assets/Intranet-Icons/upload.svg'" width="150px" height="150px" >
+          </div>
+          
+          
+          <div style="font-size:16px; font-weight:bold">Select a file to upload</div>
+        </div>
+       <div fxFlex="20">
+          <mat-chip-list #chipList>
+              <mat-chip *ngFor="let file of fileobject" [removable]="removable" (removed)="remove(file)">
+                {{file.fileName}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+  
+            </mat-chip-list>
+            <div *ngIf="onlyimagewarning != null">{{onlyimagewarning}}</div>
+            <div *ngIf="sizeexceedsfilename != null">{{sizeexceedsfilename}} exceeds size limit</div>
+       </div>
+      </div> 
+    </div>
+     <div fxFlex="10" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start start" >
+      <button mat-raised-button class="submit" [disabled]="fileobject.length==0" (click)="sendFile();">Submit</button>
+      <button mat-raised-button class="cancel" (click)="onNoClick()">Cancel</button>
+    
+    </div> 
+  </form>
+</div>

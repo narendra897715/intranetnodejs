@@ -1,0 +1,10 @@
+.mat-chip-list-wrapper {
+    display: inline !important;
+    margin: 0 !important;
+}
+
+.submit-styling {
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgba(92, 205, 146, 1) 0%, rgba(98, 176, 177, 1) 100%) !important;
+}

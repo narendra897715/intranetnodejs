@@ -1,0 +1,43 @@
+import {
+    HttpEvent,
+    HttpInterceptor,
+    HttpHandler,
+    HttpRequest,
+    HttpResponse
+  } from '@angular/common/http';
+  import {Injectable} from '@angular/core';
+  import { Observable } from 'rxjs';
+  import {BusinessLogicService} from './business-logic.service';
+  import { tap } from 'rxjs/operators';
+  @Injectable()
+  export class AddHeaderInterceptor implements HttpInterceptor {
+    reqHeader: any;
+    constructor(public businesslogin: BusinessLogicService) { }
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      // console.log(req);
+        this.businesslogin.loadingImageChange(true);
+        if(req.url === 'http://localhost:3000/employee/getEmployeeDetailsWithToken'){
+          this.reqHeader = req.clone({headers: req.headers.set('token', localStorage.getItem('AuthenticationToken'))});
+        }
+        else{
+          this.reqHeader = req.clone({headers: req.headers.set('x-auth', localStorage.getItem('xauth'))});
+        }
+
+      return next.handle(this.reqHeader).pipe(
+        tap(resp => {
+
+          if (resp instanceof HttpResponse) {
+            localStorage.setItem('xauth',  resp.headers.get('x-auth'));
+            if(resp.body.pages !== undefined){
+              this.businesslogin.loadingImageChange(true);
+            }
+            else{
+              this.businesslogin.loadingImageChange(false);
+            }
+          }
+        }, error => {
+            this.businesslogin.loadingImageChange(false);
+        })
+      );
+    }
+  }

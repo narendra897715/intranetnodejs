@@ -1,0 +1,138 @@
+<div fxFlex fxLayout="column">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" style="background-color:#edf0f3; height:55px;">
+    <span class="color-toolbar-header">Post an update</span>
+    <mat-icon (click)="onNoClick()" class="color" style="cursor: pointer">&#xE5CD;</mat-icon>
+  </mat-toolbar>
+
+  <form fxLayout="column" fxLayout.xs="column" (ngSubmit)="interactionForumDailogForm.form.valid && postUpdate(interactionForumDailogForm);" fxLayout.sm="column" fxLayout.md="column" style="padding:20px;" #interactionForumDailogForm="ngForm">
+
+    <div fxFlex="20" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="30" fxLayout="column">
+        <label>Start a Discussion</label>
+        <div  class="form-group">
+            <mat-form-field>
+          
+                <mat-select class="form-control" id="categoryId" #categoryId="ngModel"  name="categoryId" [(ngModel)]="interactionforumdailogobject.categoryId" placeholder="category"   required>
+                  <mat-option *ngFor="let cat of data_source" [value]="cat.categoryId" [innerText]="cat.categoryName">
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="categoryId.invalid">This Field is required</mat-error>
+              </mat-form-field>
+        </div>
+       
+      </div>
+
+      <div fxFlex="5"></div>
+
+      <div fxFlex="30" fxLayout="column">
+        <label>Start Date</label>
+        <mat-form-field [floatLabel]="'never'">
+          <input name="eventStartDate" [(ngModel)]="interactionforumdailogobject.eventStartDate"   autocomplete="off" readonly matInput [matDatepicker]="startpicker"
+            placeholder="Date" style="padding-bottom: 0 !important;">
+          <mat-datepicker-toggle matSuffix [for]="startpicker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #startpicker disabled="false"></mat-datepicker>
+          <!-- <mat-error>  
+              <span *ngIf="!form.get('eventStartDate').valid && form.get('eventStartDate').touched">date is required</span>  
+          </mat-error>  -->
+        </mat-form-field>
+      </div>
+
+      <div fxFlex="5"></div>
+
+      <div fxFlex="30" fxLayout="column">
+        <label>End Date</label>
+        <mat-form-field [floatLabel]="'never'">
+          <input name="eventEndDate" [(ngModel)]="interactionforumdailogobject.eventEndDate"  autocomplete="off" readonly matInput [matDatepicker]="endpicker" 
+            placeholder="Date" style="padding-bottom: 0 !important;">
+          <mat-datepicker-toggle matSuffix [for]="endpicker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #endpicker disabled="false"></mat-datepicker>
+          <!-- <mat-error>  
+              <span *ngIf="!form.get('eventEndDate').valid && form.get('eventEndDate').touched">Date is required</span>  
+          </mat-error>  -->
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxFlex="10" style="margin:1%">
+      <span fxFlex="12" style="font-weight:bold; margin-top:1%">Add images</span>
+      <input id="upload" type="file" style="display:none" (change)="onFileChange($event)" multiple 
+        name="imageData">
+      <button mat-raised-button style="background-color:#EEEFF1; border-radius: 5px;" (click)="openInput()" style="margin-right:5px">
+        <span fxLayout="row">
+          <!-- <img style="height:35px" [src]="uploadimage">--> &nbsp;&nbsp; Choose a file...</span> 
+      </button>
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let image of imageobject" 
+                 [removable]="removable" (removed)="remove(image)">
+          {{image.imageName}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+      
+      </mat-chip-list>
+    </div>
+
+     <div fxFlex="60">
+    <div fxLayout="column" fxFlex>
+        <div class="form-group">
+      <mat-form-field appearance="outline">
+        <textarea matInput class="form-control" name="eventName" id="eventName" #eventName="ngModel" [(ngModel)]="interactionforumdailogobject.eventName" required  placeholder="Write heading here.." style="height:25px" ></textarea>
+        <!-- <mat-error>  
+            <span *ngIf="!form.get('eventName').valid && form.get('eventName').touched">Event Name is required</span>  
+        </mat-error>  -->
+        <mat-error *ngIf="eventName.invalid">This Field is required</mat-error>
+      </mat-form-field>
+      </div>
+       <div class="form-group">
+          <mat-form-field appearance="outline">
+          <textarea class="form-control" matInput name="eventDescription" id="eventDescription" #eventDescription="ngModel" [(ngModel)]="interactionforumdailogobject.eventDescription" required placeholder="Write description here.." style="height:100px"></textarea>
+          <mat-error *ngIf="eventDescription.invalid">This Field is required</mat-error>
+        </mat-form-field>
+          <!-- <div *ngIf="eventDescription.touched && eventDescription.invalid" >
+              <div *ngIf="eventDescription.errors.required">This Field is required</div>
+          </div> -->
+      </div> 
+     
+      <!-- <div *ngIf="eventDescription.errors && (eventDescription.dirty || eventDescription.touched)" class="alert alert-danger">
+          <div [hidden]="!eventDescription.errors.required">
+            Book title is required!
+          </div>
+         
+        </div> -->
+       <div *ngIf="interactionforumdailogobject.categoryId == 7" fxLayout="row" fxLayoutGap="5px">
+           <div fxFlex="10">
+             Add Options
+           </div>
+           <div fxLayout="column" fxFlex appearance="outline"  style="overflow:auto;height:150px;border:1px solid black;">
+             <div *ngFor="let option of Options;let i = index">
+               <div fxLayout=row>
+               <div fxLayoutAlign="center center">option {{option.optionumber}}</div>
+               <div fxFlex fxLayout="column" >
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput name="name-{{i}}" [(ngModel)]="option.optionDescription">
+                  </mat-form-field>   
+                </div>
+                </div>
+            </div>
+           </div>
+        
+           <div fxFlex="20" fxLayoutAlign="start start">
+             <button style="background-color:black;border:none;color:white;    height: 30px;
+             border-radius: 3px;" (click)="AddOption(Options)">option</button>
+           </div>
+      </div> 
+    </div>
+  </div> 
+     <div fxFlex="10" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center" style="margin-top: 18px;">
+      <button mat-raised-button class="submit"  >Submit</button>
+      <button mat-raised-button class="cancel" (click)="onNoClick()">Cancel</button>
+    </div> 
+  </form>
+
+
+</div>
+
+

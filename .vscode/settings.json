@@ -1,0 +1,5 @@
+{
+    "svn.delete.ignoredRulesForDeletedFiles": [
+        "UI\\src\\app\\dashboard-awards"
+    ]
+}

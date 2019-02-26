@@ -1,0 +1,197 @@
+import { Component, OnInit } from '@angular/core';
+import {ImageProperties,IinteractionForumDailog,IinteractionForumEvent } from '../../app.interface';
+import {Itab} from '../../app.interface';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { BusinessLogicService } from '../../business-logic.service';
+import {NgForm} from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+@Component({
+  selector: 'app-interaction-forums-dailog',
+  templateUrl: './interaction-forums-dailog.component.html',
+  styleUrls: ['./interaction-forums-dailog.component.scss']
+})
+export class InteractionForumsDailogComponent implements OnInit {
+
+  file: any;
+  removable = true;
+  data_source: Itab[] = [];
+  Options2 : any;
+    interactionforumdailogobject : IinteractionForumDailog = {categoryId:null,eventDescription:null,eventName:null,eventEndDate:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId,eventStartDate:null,imageData:[],pollingOptions:null}
+  imageobject: ImageProperties [] = [];
+  optionDescription = null;
+  hideUpdateButton = false;
+  disableCommentButton = true;
+  count = 0;
+  sizeexceedsfilename: string = null;
+  onlyimagewarning: string = null;
+  constructor(
+    public dialogRef: MatDialogRef<InteractionForumsDailogComponent>,private businesslogic: BusinessLogicService,public snackBar: MatSnackBar
+    ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close(undefined);
+  }
+  openInput() {
+    // your can use ElementRef for this later
+    document.getElementById('upload').click();
+  }
+
+  onFileChange(evt) {
+    this.count = 0;
+    this.imageobject = [];
+    const files = evt.target.files;
+    if (files.length > 5) {
+      this.snackBar.open('max of 5 images can be uploaded', '', { duration: 3000,panelClass: ['warningMessage']  });
+    } else {
+      for (let i = 0; i < files.length; i++) {
+        if (files[i].type.indexOf('image') === -1) {
+          this.snackBar.open('Accepts Only images', '', { duration: 3000,panelClass: ['warningMessage']  });
+          this.count = 1;
+          break;
+        } else if (files[i].size > 1000000) {
+          this.count = 1;
+          // this.onlyimagewarning = null;
+          this.snackBar.open(files[i].name + ' ' + 'exceeds size limit', '', { duration: 3000,panelClass: ['warningMessage'] });
+          // this.sizeexceedsfilename = files[i].name;
+          break;
+        }
+
+      }
+      if (this.count === 0) {
+        // this.onlyimagewarning = null;
+        // this.sizeexceedsfilename = null;
+        if (files) {
+          for (let i = 0; i < files.length; i++) {
+            this.file = files[i];
+            const reader = new FileReader();
+            reader.onload = this._handleReaderLoaded.bind(this, files.length, i, files[i]);
+            reader.readAsBinaryString(this.file);
+          }
+        }
+      }
+    }
+  }
+
+_handleReaderLoaded(lengthoffiles, ivalue, filevalue, readerEvt) {
+
+   const binaryString = readerEvt.target.result;
+             this.imageobject.push({'imageName': filevalue.name, 'imageType': filevalue.type, 'Image': btoa(binaryString),
+             'updatedBy':  this.businesslogic.employeeId, 'createdBy':  this.businesslogic.employeeId});
+             if (ivalue + 1 === lengthoffiles) {
+              this.addimage();
+             }
+  }
+
+  addimage() {
+    this.interactionforumdailogobject.imageData = this.imageobject;
+  }
+  Options : any;
+  optionnumber = 0; 
+  ngOnInit() {
+    // this.form = this.formBuilder.group({
+    //   categoryId: [null, Validators.required],
+    //   eventStartDate: [null],
+    //   eventEndDate: [null],
+    //   eventName: [null, Validators.required],
+    //   eventDescription: [null, Validators.required],
+    //   updatedBy: [21375],
+    //   createdBy: [21375],
+    //   imageData: [[]],
+    //   pollingOptions : [[]]
+    // });
+    this.Options  = [{optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId},{optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId}];
+this.Options2 = [];
+    this.getCategoryList();
+  }
+  getCategoryList(){
+    this.businesslogic.get('interaction_forums/getCategoryDropDown').subscribe((response: any) => {
+   
+    this.data_source = response;
+     });
+  }
+//  AddOption(Option) {
+//    console.log(Option);
+//   this.optionnumber = this.optionnumber +1;
+//    this.Options.push({optionumber:this.optionnumber,optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId})
+  
+//  }
+option = {optionnumber:1,optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId}
+editingId : number;
+updateOption(optionDetails){
+  this.hideUpdateButton = true;
+   this.optionDescription = optionDetails.optionDescription;
+
+   this.editingId = optionDetails.optionnumber;
+}
+
+updatedOptionid(optionDesc){
+  this.Options2.map((item, i) => {
+    if (item.optionnumber == this.editingId){
+     this.Options2[i].optionDescription =optionDesc;
+     this.hideUpdateButton = false;
+     }
+   });
+}
+
+AddOption(optionDes){
+  // this.option.optionDescription = '';
+  // optionDes.optionnumber = optionDes.optionnumber +1;
+  //  this.Options2.push(optionDes);
+  //  console.log(this.Options2);
+  this.optionDescription = '';
+  this.optionnumber = this.optionnumber +1;
+  this.Options2.push({optionnumber:this.optionnumber,optionDescription:optionDes,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId});
+
+}
+
+ deleteoption(option): void {
+this.optionDescription = '';
+this.hideUpdateButton = false;
+  const index = this.Options2.indexOf(option);
+  if (index >= 0) {
+    
+    this.Options2.splice(index, 1);
+   
+  }
+}
+
+checkForCommentDisabled(commentcontent){
+  if(commentcontent.trim().length == 0){
+    this.disableCommentButton = true;
+  }
+  else{
+   this.disableCommentButton = false;
+  }
+}
+
+  postUpdate(postForm:NgForm) {
+    if(this.interactionforumdailogobject.eventStartDate != null){
+      this.interactionforumdailogobject.eventStartDate = Date.parse(this.interactionforumdailogobject.eventStartDate);
+    }
+   if(this.interactionforumdailogobject.eventEndDate != null){
+this.interactionforumdailogobject.eventEndDate = Date.parse(this.interactionforumdailogobject.eventEndDate);
+   }
+    
+    if(this.interactionforumdailogobject.categoryId == 7){
+      this.interactionforumdailogobject.pollingOptions = this.Options2;
+    }
+    else{
+      this.interactionforumdailogobject.pollingOptions = null;
+    }
+    
+    this.businesslogic.postUpdate('interaction_forums/postAnDiscussion', this.interactionforumdailogobject).subscribe((response: any) => {
+    this.dialogRef.close(response);
+          });
+  }
+
+     remove(image): void {
+           const index = this.imageobject.indexOf(image);
+       
+           if (index >= 0) {
+             this.imageobject.splice(index, 1);
+             this.interactionforumdailogobject.imageData = this.imageobject;
+           }
+         }
+
+
+}

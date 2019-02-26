@@ -1,0 +1,166 @@
+import { Component, OnInit, Inject, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Itab } from '../app.interface';
+import { BusinessLogicService } from '../business-logic.service';
+import { IPostupdateobject, ImageProperties } from '../app.interface';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
+
+@Component({
+  selector: 'app-editpopupmodal',
+  templateUrl: './editpopupmodal.component.html',
+  styleUrls: ['./editpopupmodal.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+export class EditpopupmodalComponent implements OnInit {
+  onEdit = new EventEmitter();
+  submenu: Itab[];
+  form: FormGroup;
+  removable = true;
+  onAdd = new EventEmitter();
+  pictureBase: string;
+  data_source: Itab[] = [];
+
+  file: any;
+  imageobject: ImageProperties[] = [];
+  count = 0;
+  sizeexceedsfilename: string = null;
+  onlyimagewarning: string = null;
+  uploadimage = 'assets/images/upload.svg';
+  imageOption: any;
+  constructor(
+    public dialogRef: MatDialogRef<EditpopupmodalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private businesslogic: BusinessLogicService,
+    private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    console.log(this.data.editingdata);
+    this.imageOption = this.data.editingdata;
+    this.businesslogic.get('news&updates/getCategoryList').subscribe((response: any) => {
+      this.submenu = response;
+    });
+    if (this.data.editingdata === 1) {
+      this.form = this.formBuilder.group({
+        categoryId: [null, Validators.required],
+        eventStartDate: [null, Validators.required],
+        eventEndDate: [null],
+        // tslint:disable-next-line:max-line-length
+        eventName: [null, [Validators.required, Validators.maxLength(150), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        // tslint:disable-next-line:max-line-length
+        eventDescription: [null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        updatedBy: [this.businesslogic.employeeId ],
+        createdBy: [this.businesslogic.employeeId ],
+        imageData: [[]]
+      });
+    } else if (this.data.editingdata !== 1) {
+      this.form = this.formBuilder.group({
+        categoryId: [this.data.editingdata.categoryId ? this.data.editingdata.categoryId : null, Validators.required],
+        eventStartDate: [this.data.editingdata.eventStartDate ? this.data.editingdata.eventStartDate : null, Validators.required],
+        eventEndDate: [this.data.editingdata.eventEndDate ? this.data.editingdata.eventEndDate : null],
+        // tslint:disable-next-line:max-line-length
+        eventName: [this.data.editingdata.eventName ? this.data.editingdata.eventName : null, [Validators.required, Validators.maxLength(150), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        // tslint:disable-next-line:max-line-length
+        eventDescription: [this.data.editingdata.eventDescription ? this.data.editingdata.eventDescription :  null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        updatedBy: [this.businesslogic.employeeId ],
+        createdBy: [this.data.editingdata.createdBy ],
+        interactionForumsId : [this.data.editingdata.interactionForumsId ? this.data.editingdata.interactionForumsId : null],
+        categoryName: [this.data.editingdata.categoryName ? this.data.editingdata.categoryName : null],
+        colourCode: [this.data.editingdata.colourCode ? this.data.editingdata.colourCode : null],
+        createdByName: [this.data.editingdata.createdByName ? this.data.editingdata.createdByName : null],
+        createdDate: [this.data.editingdata.createdDate ? this.data.editingdata.createdDate : null],
+        enteredTheDiscussion: [this.data.editingdata.enteredTheDiscussion ? this.data.editingdata.enteredTheDiscussion : null],
+        newsAndUpdatesId: [this.data.editingdata.newsAndUpdatesId ? this.data.editingdata.newsAndUpdatesId : null],
+        updatedByName: [this.data.editingdata.updatedByName ? this.data.editingdata.updatedByName : null],
+        updatedDate: [this.data.editingdata.updatedDate ? this.data.editingdata.updatedDate : null] 
+      });
+    }
+  }
+  postUpdate() {
+    this.form.value.imageData = this.imageobject;
+    this.form.value.eventStartDate = Date.parse(this.form.value.eventStartDate);
+    this.form.value.eventEndDate = Date.parse(this.form.value.eventEndDate);
+    if(this.data.from === 'news&update'){
+      this.businesslogic.postUpdate('news&updates/postAnUpdate', this.form.value).subscribe((response: any) => {
+        this.dialogRef.close('posted succesfully');
+      });
+    }
+    else{
+      this.businesslogic.postUpdate('interaction_forums/postAnDiscussion', this.form.value).subscribe((response: any) => {
+        this.dialogRef.close('posted succesfully');
+      });
+    }
+   
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close(undefined);
+  }
+
+  openInput() {
+    // your can use ElementRef for this later
+    document.getElementById('upload').click();
+  }
+
+  onFileChange(evt) {
+    this.count = 0;
+    this.imageobject = [];
+    const files = evt.target.files;
+    if (files.length > 5) {
+      this.onlyimagewarning = 'Files Selection Limit Exceeds';
+    } else {
+      for (let i = 0; i < files.length; i++) {
+        if (files[i].type.indexOf('image') === -1) {
+          this.onlyimagewarning = 'Accepts Only images';
+          this.count = 1;
+          break;
+        } else if (files[i].size > 1000000) {
+          this.count = 1;
+          this.onlyimagewarning = null;
+          this.sizeexceedsfilename = files[i].name;
+          break;
+        }
+
+      }
+      if (this.count === 0) {
+        this.onlyimagewarning = null;
+        this.sizeexceedsfilename = null;
+        if (files) {
+          for (let i = 0; i < files.length; i++) {
+            this.file = files[i];
+            const reader = new FileReader();
+            reader.onload = this._handleReaderLoaded.bind(this, files.length, i, files[i]);
+            reader.readAsBinaryString(this.file);
+          }
+        }
+      }
+    }
+  }
+
+  _handleReaderLoaded(lengthoffiles, ivalue, filevalue, readerEvt) {
+
+    const binaryString = readerEvt.target.result;
+    this.imageobject.push({
+      'imageName': filevalue.name, 'imageType': filevalue.type, 'Image': btoa(binaryString),
+      'updatedBy': 21375, 'createdBy': 21375
+    });
+    if (ivalue + 1 === lengthoffiles) {
+      this.addimage();
+    }
+  }
+
+  addimage() {
+    this.form.value.imageData = this.imageobject;
+  }
+
+  remove(image): void {
+    const index = this.imageobject.indexOf(image);
+    if (index >= 0) {
+      this.imageobject.splice(index, 1);
+      this.form.value.imageData = this.imageobject;
+    }
+  }
+}

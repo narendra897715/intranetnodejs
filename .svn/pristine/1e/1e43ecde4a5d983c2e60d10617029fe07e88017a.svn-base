@@ -1,0 +1,7 @@
+<div style="position: fixed;left:50%;top:50%">
+        <mat-spinner [style.display]="businesslogic.loadingImage ? 'inline' : 'none'"></mat-spinner>
+</div>
+
+<router-outlet ></router-outlet>
+
+

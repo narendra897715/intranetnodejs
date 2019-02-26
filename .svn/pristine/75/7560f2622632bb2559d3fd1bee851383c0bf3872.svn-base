@@ -1,0 +1,56 @@
+.tile1 {
+    margin: 15px 15px 0px;
+}
+
+.color {
+    color: #95af28;
+}
+.searchbox{
+    padding: 10px;
+    border-radius: 9px;
+    background-color: #ddd;
+    width: 140px;
+}
+.uploaddocs{
+    padding: 10px;
+    border-radius: 9px;
+    background-color: #372f85;  
+    width: 140px;
+    color: white;
+}
+
+
+.tabactive {
+    background-color: #474747 !important;
+    color: white;
+    //height: 40px !important;
+    cursor: pointer;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 0px 15px 0px 15px;
+    position: relative;
+}
+.tabactive:after {
+    content:'';
+    position: absolute;
+    top: 85%;
+    left: 35%;
+   
+    width: 0;
+    height: 0;
+    border-bottom: solid 10px #ffffff;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+.tabinactive {
+    cursor: pointer;
+   // height: 40px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    //padding-top: 13px;
+    text-align: center;
+    font-size: 14px !important;
+    margin-right: 10px;
+ //   background-color: #ebebeb;
+}

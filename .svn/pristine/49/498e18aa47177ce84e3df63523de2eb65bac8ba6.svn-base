@@ -1,0 +1,11 @@
+version: '2'
+
+# based off compose-sample-2, only we build nginx.conf into image
+# uses sample site from https://startbootstrap.com/template-overviews/agency/
+
+services:
+  intra_compose:
+    build: .
+    image: intra_image_compose
+    ports:
+      - '1235:3008'

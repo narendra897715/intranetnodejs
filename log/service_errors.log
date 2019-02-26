@@ -1,0 +1,1060 @@
+[2018-09-25T18:52:52.462] [FATAL] error - TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:303:48)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-25T18:55:14.068] [FATAL] error - TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:303:48)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-25T18:56:56.811] [FATAL] error - TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:303:48)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-26T18:29:04.979] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:249:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T11:45:45.584] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:250:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T11:47:45.626] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:250:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T16:35:37.133] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:09:50.821] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:12:35.290] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:14:35.323] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:17:56.049] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:17:58.310] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:18:15.954] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:20:15.990] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:28:02.113] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:29:48.563] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:29:48.563] [FATAL] error - Error: TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:268:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:30:02.127] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:31:06.150] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:32:34.224] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:34:01.243] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:34:34.248] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:36:01.555] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:37:05.160] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:37:13.185] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:38:36.018] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:38:44.043] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:47:46.389] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:48:29.400] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:49:46.125] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:50:29.412] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:52:54.592] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:54:03.990] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:55:20.983] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:57:20.993] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T18:25:58.737] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-28T14:45:09.161] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-28T14:47:09.195] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-28T14:47:30.968] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-28T14:48:47.971] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:259:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-05T18:57:44.653] [FATAL] error - TypeError: NewsAndUpdatesDAO.getIndustryNews is not a function
+    at Object.exports.getIndustryNewsInfo (D:\intranet2\src\service\NewsAndUpdatesService.js:151:52)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:96:48)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at D:\intranet2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\intranet2\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\intranet2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\intranet2\node_modules\express\lib\router\index.js:174:3)
+[2018-10-08T12:45:46.245] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'resourcesCategoryId', table 'IntranetPortal.dbo.tbl_resources_files'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'resourcesCategoryId', table 'IntranetPortal.dbo.tbl_resources_files'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'resourcesCategoryId\', table \'IntranetPortal.dbo.tbl_resources_files\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-09T14:02:13.767] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:264:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-09T17:39:03.001] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:264:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-09T17:48:45.328] [FATAL] error - TypeError: NewsAndUpdatesDAO.getIndustryNews is not a function
+    at Object.exports.getIndustryNewsInfo (D:\intranet2\src\service\NewsAndUpdatesService.js:151:52)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:96:48)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at D:\intranet2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\intranet2\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\intranet2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\intranet2\node_modules\express\lib\router\index.js:174:3)
+[2018-10-09T18:19:04.643] [FATAL] error - TypeError: NewsAndUpdatesDAO.getIndustryNews is not a function
+    at Object.exports.getIndustryNewsInfo (D:\intranet2\src\service\NewsAndUpdatesService.js:151:52)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:96:48)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at D:\intranet2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\intranet2\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\intranet2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\intranet2\node_modules\express\lib\router\index.js:174:3)
+[2018-10-11T13:08:35.670] [FATAL] error - { RequestError: Validation failed for parameter 'commentContent'. Invalid number.
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:609:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at D:\intranet2\node_modules\tedious\lib\connection.js:1342:19
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  code: 'EPARAM',
+  number: 'EPARAM',
+  state: undefined,
+  originalError: 
+   { RequestError: Validation failed for parameter 'commentContent'. Invalid number.
+    at Request.validateParameters (D:\intranet2\node_modules\tedious\lib\request.js:193:31)
+    at Request.transformIntoExecuteSqlRpc (D:\intranet2\node_modules\tedious\lib\request.js:124:16)
+    at Connection.execSql (D:\intranet2\node_modules\tedious\lib\connection.js:1337:15)
+    at Immediate.parent.acquire [as _onImmediate] (D:\intranet2\node_modules\mssql\lib\tedious.js:833:63)
+    at runCallback (timers.js:795:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+     message: 'Validation failed for parameter \'commentContent\'. Invalid number.',
+     code: 'EPARAM' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-11T13:09:55.264] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'interactionForumsId\', table \'IntranetPortal.dbo.tbl_iforum_CLD\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-12T10:39:22.976] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'interactionForumsId\', table \'IntranetPortal.dbo.tbl_iforum_CLD\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-12T10:41:48.430] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'interactionForumsId\', table \'IntranetPortal.dbo.tbl_iforum_CLD\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-17T17:08:06.080] [FATAL] error - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:265:43)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-17T17:08:13.303] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:256:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-17T20:22:16.136] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:256:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-18T16:47:11.184] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:264:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-19T11:27:47.334] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:264:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-19T11:49:53.326] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:256:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-19T11:53:05.093] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:71:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:256:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-23T16:06:34.957] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:264:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-23T18:57:39.962] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:264:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:06:37.838] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:07:12.554] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:12:08.343] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:13:59.877] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-30T15:03:07.022] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-30T15:04:33.305] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-30T15:05:16.709] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T19:59:40.728] [FATAL] error - TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:294:57)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T19:59:42.551] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T19:59:51.316] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:01:04.586] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:02:00.818] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:21:26.357] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:21:31.569] [FATAL] error - TypeError: Cannot read property 'overallPercentage' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:114:66)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:23:01.762] [FATAL] error - TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:297:57)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:25:50.546] [FATAL] error - TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:297:57)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-01T13:10:21.727] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:267:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-01T13:12:42.792] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:267:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-05T17:34:38.316] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:267:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-06T16:11:39.208] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:267:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-12T11:52:25.359] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:273:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-12T14:54:16.803] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:273:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:22:44.589] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T11:26:20.858] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T11:30:09.740] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T11:37:03.712] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T11:55:45.424] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T11:59:58.033] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T12:06:18.398] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-13T12:10:01.015] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'updatedBy\', table \'IntranetPortal.dbo.tbl_polling_options\'; column does not allow nulls. UPDATE fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-11-28T13:33:59.339] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:72:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:267:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-28T13:33:59.542] [FATAL] error - TypeError: Cannot read property 'map' of undefined
+    at ObjectConversion (D:\intranet2\src\service\InteractionForumsService.js:72:37)
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:267:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-28T13:33:59.542] [FATAL] error - Error: TypeError: Cannot read property 'map' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:285:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-11T14:43:27.525] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-11T14:51:19.961] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:101)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-13T12:02:56.414] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'createdDate\', table \'IntranetPortal_Test.dbo.tbl_polling_options\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-12-13T12:08:04.957] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'createdDate\', table \'IntranetPortal_Test.dbo.tbl_polling_options\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-12-13T12:13:47.969] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'createdDate\', table \'IntranetPortal_Test.dbo.tbl_polling_options\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-12-13T12:21:04.965] [FATAL] error - { RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'createdDate\', table \'IntranetPortal_Test.dbo.tbl_polling_options\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-12-21T13:14:19.943] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:97)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-21T13:14:37.506] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:97)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-21T14:12:44.097] [FATAL] error - TypeError: Cannot read property 'interactionForumsId' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:97)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)

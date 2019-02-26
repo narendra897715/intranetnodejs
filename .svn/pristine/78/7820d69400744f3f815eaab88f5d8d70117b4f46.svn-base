@@ -1,0 +1,161 @@
+import { Component, OnInit, Inject, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Itab } from '../app.interface';
+import { BusinessLogicService } from '../business-logic.service';
+import { IPostupdateobject, ImageProperties } from '../app.interface';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
+
+@Component({
+  selector: 'app-editpopupmodal',
+  templateUrl: './editpopupmodal.component.html',
+  styleUrls: ['./editpopupmodal.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+export class EditpopupmodalComponent implements OnInit {
+  onEdit = new EventEmitter();
+  submenu: Itab[];
+  form: FormGroup;
+  removable = true;
+  onAdd = new EventEmitter();
+  pictureBase: string;
+  data_source: Itab[] = [];
+
+  file: any;
+  imageobject: ImageProperties[] = [];
+  count = 0;
+  sizeexceedsfilename: string = null;
+  onlyimagewarning: string = null;
+  uploadimage = 'assets/images/upload.svg';
+  imageOption: any;
+  minDate: any;
+  maxDate: any;
+  constructor(
+    public dialogRef: MatDialogRef<EditpopupmodalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private businesslogic: BusinessLogicService,
+    private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    console.log(this.data);
+    this.imageOption = this.data;
+    this.businesslogic.get('news&updates/getCategoryList').subscribe((response: any) => {
+      this.submenu = response;
+    });
+    if (this.data === 1) {
+      this.form = this.formBuilder.group({
+        categoryId: [null, Validators.required],
+        eventStartDate: [null, Validators.required],
+        eventEndDate: [null, Validators.required],
+        // tslint:disable-next-line:max-line-length
+        eventName: [null, [Validators.required, Validators.maxLength(150), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        // tslint:disable-next-line:max-line-length
+        eventDescription: [null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        updatedBy: [this.businesslogic.employeeId ],
+        createdBy: [this.businesslogic.employeeId ],
+        imageData: [[]]
+      });
+    } else if (this.data !== 1) {
+      this.form = this.formBuilder.group({
+        categoryId: [this.data.categoryId ? this.data.categoryId : null, Validators.required],
+        eventStartDate: [this.data.eventStartDate ? this.data.eventStartDate : null, Validators.required],
+        eventEndDate: [this.data.eventEndDate ? this.data.eventEndDate : null, Validators.required],
+        // tslint:disable-next-line:max-line-length
+        eventName: [this.data.eventName ? this.data.eventName : null, [Validators.required, Validators.maxLength(150), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[a-zA-Z0-9^]/)]],
+        // tslint:disable-next-line:max-line-length
+        eventDescription: [this.data.eventDescription ? this.data.eventDescription : null],
+        updatedBy: [this.businesslogic.employeeId ],
+        createdBy: [this.businesslogic.employeeId ],
+        imageData: [[]],
+        categoryName: [this.data.categoryName ? this.data.categoryName : null],
+        colourCode: [this.data.colourCode ? this.data.colourCode : null],
+        createdByName: [this.data.createdByName ? this.data.createdByName : null],
+        createdDate: [this.data.createdDate ? this.data.createdDate : null],
+        enteredTheDiscussion: [this.data.enteredTheDiscussion ? this.data.enteredTheDiscussion : null],
+        newsAndUpdatesId: [this.data.newsAndUpdatesId ? this.data.newsAndUpdatesId : null],
+        updatedByName: [this.data.updatedByName ? this.data.updatedByName : null],
+        updatedDate: [this.data.updatedDate ? this.data.updatedDate : null]
+      });
+    }
+  }
+  postUpdate() {
+
+    this.form.value.eventStartDate = Date.parse(this.form.value.eventStartDate);
+    this.form.value.eventEndDate = Date.parse(this.form.value.eventEndDate);
+    this.businesslogic.postUpdate('news&updates/postAnUpdate', this.form.value).subscribe((response: any) => {
+      this.onEdit.emit(this.data.newsAndUpdatesId);
+    });
+    this.dialogRef.close(this.form.value.newsAndUpdatesId);
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close(undefined);
+  }
+
+  openInput() {
+    // your can use ElementRef for this later
+    document.getElementById('upload').click();
+  }
+
+  onFileChange(evt) {
+    this.count = 0;
+    this.imageobject = [];
+    const files = evt.target.files;
+    if (files.length > 5) {
+      this.onlyimagewarning = 'Files Selection Limit Exceeds';
+    } else {
+      for (let i = 0; i < files.length; i++) {
+        if (files[i].type.indexOf('image') === -1) {
+          this.onlyimagewarning = 'Accepts Only images';
+          this.count = 1;
+          break;
+        } else if (files[i].size > 1000000) {
+          this.count = 1;
+          this.onlyimagewarning = null;
+          this.sizeexceedsfilename = files[i].name;
+          break;
+        }
+
+      }
+      if (this.count === 0) {
+        this.onlyimagewarning = null;
+        this.sizeexceedsfilename = null;
+        if (files) {
+          for (let i = 0; i < files.length; i++) {
+            this.file = files[i];
+            const reader = new FileReader();
+            reader.onload = this._handleReaderLoaded.bind(this, files.length, i, files[i]);
+            reader.readAsBinaryString(this.file);
+          }
+        }
+      }
+    }
+  }
+
+  _handleReaderLoaded(lengthoffiles, ivalue, filevalue, readerEvt) {
+
+    const binaryString = readerEvt.target.result;
+    this.imageobject.push({
+      'imageName': filevalue.name, 'imageType': filevalue.type, 'Image': btoa(binaryString),
+      'updatedBy': 21375, 'createdBy': 21375
+    });
+    if (ivalue + 1 === lengthoffiles) {
+      this.addimage();
+    }
+  }
+
+  addimage() {
+    this.form.value.imageData = this.imageobject;
+  }
+
+  remove(image): void {
+    const index = this.imageobject.indexOf(image);
+    if (index >= 0) {
+      this.imageobject.splice(index, 1);
+      this.form.value.imageData = this.imageobject;
+    }
+  }
+}

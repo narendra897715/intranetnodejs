@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot,NavigationEnd,RoutesRecognized   } from '@angular/router';
+import { filter, pairwise } from 'rxjs/operators';
+
+@Injectable()
+export class AuthGuardService implements CanActivate {
+ 
+  constructor( private router: Router) {
+   console.log(document.referrer);
+  }
+  
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+
+    if(document.referrer=='http://localhost:8080/Authentication/'){
+
+    }
+
+    if(localStorage.getItem('AuthenticationToken')==null){
+        if(document.referrer=='http://localhost:8080/Authentication/'){
+            return true;
+        }
+        else{
+            window.location.href= 'http://localhost:8080/Authentication/#/'; 
+            return false;
+        }
+       
+       
+       // window.location.href('http://localhost:8080/Authentication/#/');
+       
+    }
+    else{
+        return true; 
+     }
+   
+  }
+}

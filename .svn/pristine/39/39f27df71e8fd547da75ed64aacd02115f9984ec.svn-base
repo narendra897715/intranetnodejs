@@ -1,0 +1,208 @@
+var { convertFromStringToDate, convertFromObjToTimestamp, convertFromMilliToDate, convertFromDateFormat, getDateforInput } = require('./../utils/date/DateFormat');
+var EmployeeDetailsDAO = require('./../dao/EmployeeDetailsDAO');
+var { log4js } = require('./../utils/log-conf/logger');
+var logger = log4js.getLogger('error');
+
+var EmailTemplate = require('./../mail/EmailTemplate');
+var SendMail = require('./../mail/SendMail');
+
+exports.fetchEmployeeDetails = async (data) => {
+    try {
+        // console.log('inside try block');
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        //get records to display
+
+        var data = await EmployeeDetailsDAO.getEmployeeDetails(data.search, data.sortById, data.workLocationId, startPos + 1, pageSize + startPos);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = data;
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  count', pagesCount);
+        return obj;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+    // try {
+
+    //     var data = await EmployeeDetailsDAO.getEmployeeDetails();
+    //     return data;
+
+    // } catch (error) {
+    //     throw error;
+    // }
+
+};
+
+exports.fetchEmployeeDetailsById = async (id) => {
+    try {
+        
+        var data = await EmployeeDetailsDAO.getEmployeeDetailsById(id);
+        for (var i = 0; i < data.length; i++) {
+            data[i].dateOfJoining = convertFromObjToTimestamp(data[i].dateOfJoining);
+            data[i].technologiesKnown = await EmployeeDetailsDAO.getEmployeeTechnicalDetailsById(id);
+        }
+        return data;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+
+exports.fetchEmployeeDetailsWithToken = async (token) => {
+    try {
+
+        var data = await EmployeeDetailsDAO.getEmployeeDetailsWithToken(token);
+        for (var i = 0; i < data.length; i++) {
+            data[i].dateOfJoining = convertFromObjToTimestamp(data[i].dateOfJoining);
+        }
+        return data;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+
+exports.fetchEmployeeDetailsDropDown = async (data) => {
+    try {
+
+        console.log(data);
+        var data = await EmployeeDetailsDAO.getEmployeeDetailsDropDown(data);
+        return data;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+
+exports.fetchAllAppreciations = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+
+        var data = await EmployeeDetailsDAO.getAllAppreciations(data.employeeId, startPos + 1, pageSize + startPos);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+        for (var i = 0; i < data.length; i++) {
+
+            data[i].createdDate = convertFromObjToTimestamp(data[i].createdDate);
+            data[i].updatedDate = convertFromObjToTimestamp(data[i].updatedDate);
+        }
+
+        var finalData = data;
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  count', pagesCount);
+        return obj;
+
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+
+exports.fetchAppreciationsId = async (id) => {
+    try {
+
+        var data = await EmployeeDetailsDAO.getAppreciationsById(id);
+        return data;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+
+exports.sendAppreciations = async (data) => {
+    try {
+        var currentDate = new Date();
+
+        data.createdDate = currentDate;
+        data.updatedDate = currentDate;
+        var result = await EmployeeDetailsDAO.sendAppreciation(data);
+        if (result) {
+            var template = EmailTemplate.emailForAppreciationPic(data.employeeName)
+            SendMail.sendMail(data.email, 'Appreciations for your work', template);
+        }
+        return result;
+    } catch (error) {
+        console.log(error);
+        logger.fatal(error);
+        throw new Error(error);
+    }
+};
+
+exports.employeeSortingDropDown = async () => {
+    try {
+
+        var data = await EmployeeDetailsDAO.employeeSortingFilter();
+        return data;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+exports.fetchSiloViewById = async (id) => {
+    try {
+
+        var data = await EmployeeDetailsDAO.siloViewById(id);
+        return data;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+};
+

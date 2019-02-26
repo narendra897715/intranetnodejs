@@ -1,0 +1,6 @@
+export const environment = {
+  apiUrl: 'http://intranet.merilytics.com/api/v1/',
+  internalAppsUrl : 'http://172.16.10.61:1004/',
+  SocketUrl : 'http://intranet.merilytics.com/api/v1',
+  production: true
+};

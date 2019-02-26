@@ -1,0 +1,126 @@
+import { Component, OnInit, ViewEncapsulation, Inject, NgZone } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { BusinessLogicService } from '../../business-logic.service';
+import { IEmployeedynamicbinding } from '../../app.interface';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Subject } from 'rxjs';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
+import {ConfirmDailogComponent} from './../../confirm-dailog/confirm-dailog.component';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-appreciation-popup',
+  templateUrl: './appreciation-popup.component.html',
+  styleUrls: ['./appreciation-popup.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  // providers: [
+  //   { provide: MAT_DIALOG_DATA, useValue: {} },
+  //   { provide: MatDialogRef, useValue: {} }
+  // ]
+})
+export class AppreciationPopupComponent implements OnInit {
+
+  employeeSelected: any;
+  mainPage: any;
+  employeeSelection: any;
+  names = [];
+  appreciation: any;
+  form: FormGroup;
+  rowcount = 0;
+  employeeObjectData: IEmployeedynamicbinding = {
+    search: null,
+    workLocationId: null,
+    sortById: 1,
+    pageNo: 1,
+    pageSize: 12
+  };
+  employee_names: Names[] = [];
+  employeeSearch: any;
+  myControl1 = new FormControl();
+  filteredOptions1: Observable<Names[]>;
+  autoCompleteCtrl: FormControl;
+  filteredData: Names[];
+  Employeeemail: any;
+
+  constructor(private businesslogic: BusinessLogicService, public dialog: MatDialog, private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<AppreciationPopupComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+    private sanitizer: DomSanitizer, public nz: NgZone) {
+
+    this.autoCompleteCtrl = new FormControl();
+    this.autoCompleteCtrl.valueChanges.subscribe(keyWord => {
+      //  this.employeeSelected = keyWord;
+      this.businesslogic.post('employee/getEmployeeDetailsDropDown', {
+        'employeeId': this.businesslogic.employeeId,
+        'searchData': keyWord
+      }).subscribe((response: Names[]) => { this.filteredData = response; this.names = response; });
+      for (let i = 0; i < this.names.length; i++) {
+        if (keyWord === this.names[i].employeeName) {
+          this.employeeSelected = this.names[i].employeeId;
+          this.Employeeemail = this.names[i].email;
+        }
+      }
+    });
+  }
+
+  ngOnInit() {
+    console.log(this.data);
+    this.mainPage = this.data;
+    // this.employeeNames();
+    // tslint:disable-next-line:max-line-length
+    this.businesslogic.post('employee/getEmployeeDetailsDropDown', { 'employeeId': this.businesslogic.employeeId }).subscribe((response: Names[]) => {
+      this.employee_names = response;
+      //  this.names = response;
+    });
+    this.form = this.formBuilder.group({
+      employeeSelection: [null],
+      // tslint:disable-next-line:max-line-length
+      appreciation_content: [null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/),
+      Validators.pattern(/\D[^0-9]/)]],
+      employeeSelected: [null]
+    });
+  }
+
+  onNoClick(): void {
+    const dialogRef = this.dialog.open(ConfirmDailogComponent, { width: '30%', data : {warning: 'Are you sure you want to close pop-up?'}});
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.dialogRef.close(undefined);
+      }
+    });
+  }
+
+  sendAppreciation() {
+    this.appreciation = {
+      'appreciatedBy': this.businesslogic.employeeId,
+      'appreciationTo': this.employeeSelected ? this.employeeSelected : this.data,
+      'contentOfAppreciation': this.form.value.appreciation_content,
+      'createdBy': this.businesslogic.employeeId,
+      'updatedBy': this.businesslogic.employeeId,
+      'employeeName': this.employeeSearch,
+      'email': this.Employeeemail,
+    };
+    this.businesslogic.post('employee/sendAppreciations', this.appreciation).subscribe((response: any) => {
+    });
+    this.dialogRef.close(this.appreciation.contentOfAppreciation);
+  }
+}
+
+
+export interface User {
+  name: string;
+  id: number;
+}
+
+export interface Names {
+  employeeId: number;
+  employeeName: string;
+  gender: string;
+  dateOfJoining: Date;
+}

@@ -1,0 +1,12 @@
+.button-div {
+    // margin-top: 18px;
+    padding: 10px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0px !important;
+}
+
+.appreciation-box>.mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+}

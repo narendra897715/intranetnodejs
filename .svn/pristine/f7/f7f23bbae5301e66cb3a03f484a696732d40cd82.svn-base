@@ -1,0 +1,55 @@
+
+  .mat-form-field{
+      width:100%;
+  }
+  .OptionAddButtonbefore {
+    width:30px; height:30px;padding: 10px;
+    pointer-events: none;
+  }
+  .OptionAddButtonafter{
+    width:30px; height:30px;padding: 10px;
+    pointer-events: auto;
+  }
+
+  .submit-active {
+    background-image: linear-gradient(#ffbd6d, #ff917b);
+  }
+
+  .submit-inactive {
+      background-image: grey;
+  }
+   .applyglobalclass {
+  
+    font-family: 'Lato';
+    outline: 0;
+    font-size: 14px;
+    color: #444444;
+}
+.endtimeclassbeforeED {
+ 
+  pointer-events: none;
+}
+.endtimeclassbeforeSD {
+  
+  pointer-events: auto;
+}
+.mat-form-field-infix{
+  width:100% !important; 
+}
+#editor{
+  padding-top:1rem !important;
+}
+.angular-editor-button[title="Insert Image"],
+.angular-editor-button[title="Unlink"],
+.angular-editor-button[title="Insert Link"],
+.angular-editor-button[title="Background Color"]  {
+  display: none;
+}
+
+.applyglobalclass > .mat-chip-list > .mat-chip-list-wrapper {
+  margin-bottom: 0px !important;
+}
+
+.mat-chip-list-wrapper {
+  margin-bottom: 10px !important;
+}

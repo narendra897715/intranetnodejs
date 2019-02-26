@@ -1,0 +1,2679 @@
+[2018-08-21T10:35:57.646] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T13:11:17.109] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T13:12:09.095] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T13:25:53.939] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T13:35:49.738] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T13:37:12.883] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T14:21:00.459] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T14:27:18.216] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:02:24.954] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:07:54.416] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:09:20.384] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:15:13.447] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:19:25.046] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:20:17.816] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:25:20.270] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:29:05.913] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:50:01.681] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:50:42.481] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:51:30.614] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:52:12.123] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:52:57.842] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:55:50.600] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T15:57:47.441] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:00:13.340] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventName', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventName', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventName\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:03:38.319] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:04:20.632] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventName', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventName', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventName\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:04:48.023] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventName', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventName', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventName\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:04:59.212] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:05:14.906] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T16:22:45.425] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:43:34.777] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:44:34.382] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:45:23.586] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:46:53.975] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:48:24.250] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:49:32.054] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:54:11.179] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-08-21T17:54:11.215] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'categoryId', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'categoryId\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-09-19T13:21:23.772] [FATAL] controller - { RequestError: Timeout: Request failed to complete in 15000ms
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at Connection.message (D:\intranet2\node_modules\tedious\lib\connection.js:1952:24)
+    at Connection.dispatchEvent (D:\intranet2\node_modules\tedious\lib\connection.js:1004:38)
+    at MessageIO.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:884:18)
+    at emitNone (events.js:106:13)
+    at MessageIO.emit (events.js:208:7)
+    at ReadablePacketStream.<anonymous> (D:\intranet2\node_modules\tedious\lib\message-io.js:104:16)
+    at emitOne (events.js:116:13)
+    at ReadablePacketStream.emit (events.js:211:7)
+  code: 'ETIMEOUT',
+  number: 'ETIMEOUT',
+  state: undefined,
+  originalError: 
+   { RequestError: Timeout: Request failed to complete in 15000ms
+    at RequestError (D:\intranet2\node_modules\tedious\lib\errors.js:34:12)
+    at Connection.message (D:\intranet2\node_modules\tedious\lib\connection.js:1952:33)
+    at Connection.dispatchEvent (D:\intranet2\node_modules\tedious\lib\connection.js:1004:38)
+    at MessageIO.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:884:18)
+    at emitNone (events.js:106:13)
+    at MessageIO.emit (events.js:208:7)
+    at ReadablePacketStream.<anonymous> (D:\intranet2\node_modules\tedious\lib\message-io.js:104:16)
+    at emitOne (events.js:116:13)
+    at ReadablePacketStream.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     message: 'Timeout: Request failed to complete in 15000ms',
+     code: 'ETIMEOUT' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-09-19T16:18:17.121] [FATAL] controller - { ConnectionError: Connection is closed.
+    at Request._execute (D:\intranet2\node_modules\mssql\lib\base.js:1411:37)
+    at Request._execute (D:\intranet2\node_modules\mssql\lib\tedious.js:843:11)
+    at Request.execute (D:\intranet2\node_modules\mssql\lib\base.js:1350:12)
+    at Object.exports.getSubMenu (D:\intranet2\src\dao\NewsAndUpdatesDAO.js:8:34)
+    at Object.exports.fetchSubMenu (D:\intranet2\src\service\NewsAndUpdatesService.js:13:23)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:17:27)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5) code: 'ECONNCLOSED', name: 'ConnectionError' }
+[2018-09-19T17:06:25.520] [FATAL] controller - { RequestError: Timeout: Request failed to complete in 15000ms
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at Connection.message (D:\intranet2\node_modules\tedious\lib\connection.js:1952:24)
+    at Connection.dispatchEvent (D:\intranet2\node_modules\tedious\lib\connection.js:1004:38)
+    at MessageIO.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:884:18)
+    at emitNone (events.js:106:13)
+    at MessageIO.emit (events.js:208:7)
+    at ReadablePacketStream.<anonymous> (D:\intranet2\node_modules\tedious\lib\message-io.js:104:16)
+    at emitOne (events.js:116:13)
+    at ReadablePacketStream.emit (events.js:211:7)
+  code: 'ETIMEOUT',
+  number: 'ETIMEOUT',
+  state: undefined,
+  originalError: 
+   { RequestError: Timeout: Request failed to complete in 15000ms
+    at RequestError (D:\intranet2\node_modules\tedious\lib\errors.js:34:12)
+    at Connection.message (D:\intranet2\node_modules\tedious\lib\connection.js:1952:33)
+    at Connection.dispatchEvent (D:\intranet2\node_modules\tedious\lib\connection.js:1004:38)
+    at MessageIO.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:884:18)
+    at emitNone (events.js:106:13)
+    at MessageIO.emit (events.js:208:7)
+    at ReadablePacketStream.<anonymous> (D:\intranet2\node_modules\tedious\lib\message-io.js:104:16)
+    at emitOne (events.js:116:13)
+    at ReadablePacketStream.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     message: 'Timeout: Request failed to complete in 15000ms',
+     code: 'ETIMEOUT' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-09-21T11:02:23.843] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:02:26.702] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:02:57.599] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:03:00.260] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:03:01.427] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:03:03.943] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:04:23.888] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:04:26.714] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:04:57.603] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:05:00.277] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:05:01.441] [FATAL] controller - TypeError: Cannot set property 'pollingEmployeeInfo' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:237:46)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:05:03.938] [FATAL] controller - TypeError: Cannot set property 'pollingEmployeeInfo' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:237:46)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T11:06:06.968] [FATAL] controller - TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.getInteractionForumsDataById (D:\intranet2\src\service\InteractionForumsService.js:242:39)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-21T17:03:18.040] [FATAL] controller - { RequestError: Could not find stored procedure 'dbo.IntranetPortal_sp_getNewsAndUpdatesCategoryList'.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 2812,
+  lineNumber: 1,
+  state: 62,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Could not find stored procedure 'dbo.IntranetPortal_sp_getNewsAndUpdatesCategoryList'.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 2812,
+        state: 62,
+        class: 16,
+        message: 'Could not find stored procedure \'dbo.IntranetPortal_sp_getNewsAndUpdatesCategoryList\'.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-09-25T18:52:52.464] [FATAL] controller - Error: TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:350:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-25T18:55:14.068] [FATAL] controller - Error: TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:350:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-25T18:56:56.812] [FATAL] controller - Error: TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:350:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T17:29:48.564] [FATAL] controller - Error: Error: TypeError: Cannot set property 'commentsData' of undefined
+    at Object.exports.startOrJoinDiscussion (D:\intranet2\src\service\InteractionForumsService.js:479:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-09-27T18:29:26.111] [FATAL] controller - { ConnectionError: Connection is closed.
+    at Request._execute (D:\intranet2\node_modules\mssql\lib\base.js:1411:37)
+    at Request._execute (D:\intranet2\node_modules\mssql\lib\tedious.js:843:11)
+    at Request.execute (D:\intranet2\node_modules\mssql\lib\base.js:1350:12)
+    at Object.exports.getSubMenu (D:\intranet2\src\dao\NewsAndUpdatesDAO.js:8:34)
+    at Object.exports.fetchSubMenu (D:\intranet2\src\service\NewsAndUpdatesService.js:14:23)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:17:27)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5) code: 'ECONNCLOSED', name: 'ConnectionError' }
+[2018-10-05T18:57:44.760] [FATAL] controller - Error: TypeError: NewsAndUpdatesDAO.getIndustryNews is not a function
+    at Object.exports.getIndustryNewsInfo (D:\intranet2\src\service\NewsAndUpdatesService.js:180:15)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:96:48)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at D:\intranet2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\intranet2\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\intranet2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\intranet2\node_modules\express\lib\router\index.js:174:3)
+[2018-10-08T12:45:46.329] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'resourcesCategoryId', table 'IntranetPortal.dbo.tbl_resources_files'; column does not allow nulls. INSERT fails.
+    at Object.exports.uploadNewFile (D:\intranet2\src\service\ResourcesService.js:132:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-09T17:48:45.329] [FATAL] controller - Error: TypeError: NewsAndUpdatesDAO.getIndustryNews is not a function
+    at Object.exports.getIndustryNewsInfo (D:\intranet2\src\service\NewsAndUpdatesService.js:180:15)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:96:48)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at D:\intranet2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\intranet2\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\intranet2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\intranet2\node_modules\express\lib\router\index.js:174:3)
+[2018-10-09T18:19:04.644] [FATAL] controller - Error: TypeError: NewsAndUpdatesDAO.getIndustryNews is not a function
+    at Object.exports.getIndustryNewsInfo (D:\intranet2\src\service\NewsAndUpdatesService.js:180:15)
+    at router.get (D:\intranet2\src\routes\NewsAndUpdatesController.js:96:48)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\intranet2\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\intranet2\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\intranet2\node_modules\express\lib\router\layer.js:95:5)
+    at D:\intranet2\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\intranet2\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\intranet2\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\intranet2\node_modules\express\lib\router\index.js:174:3)
+[2018-10-10T16:56:09.915] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'imageType', table 'IntranetPortal.dbo.tbl_images'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'imageType', table 'IntranetPortal.dbo.tbl_images'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'imageType\', table \'IntranetPortal.dbo.tbl_images\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-11T13:08:35.671] [FATAL] controller - Error: RequestError: Validation failed for parameter 'commentContent'. Invalid number.
+    at Object.exports.comments (D:\intranet2\src\service\InteractionForumsService.js:450:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-11T13:09:55.265] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at Object.exports.comments (D:\intranet2\src\service\InteractionForumsService.js:450:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-12T10:39:22.977] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at Object.exports.comments (D:\intranet2\src\service\InteractionForumsService.js:450:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-12T10:41:48.447] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'interactionForumsId', table 'IntranetPortal.dbo.tbl_iforum_CLD'; column does not allow nulls. INSERT fails.
+    at Object.exports.comments (D:\intranet2\src\service\InteractionForumsService.js:450:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-12T16:12:54.335] [FATAL] controller - ReferenceError: re is not defined
+    at router.post (D:\intranet2\src\routes\InteractionForumsController.js:167:31)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-15T20:22:44.369] [FATAL] controller - { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at D:\intranet2\node_modules\tedious\lib\connection.js:1432:19
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  code: 'EPARAM',
+  number: 'EPARAM',
+  state: undefined,
+  originalError: 
+   { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.validateParameters (D:\intranet2\node_modules\tedious\lib\request.js:193:31)
+    at Connection.callProcedure (D:\intranet2\node_modules\tedious\lib\connection.js:1427:15)
+    at Immediate.parent.acquire [as _onImmediate] (D:\intranet2\node_modules\mssql\lib\tedious.js:1060:20)
+    at runCallback (timers.js:795:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+     message: 'Validation failed for parameter \'newsAndUpdatesId\'. Invalid number.',
+     code: 'EPARAM' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-15T20:46:23.711] [FATAL] controller - { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at D:\intranet2\node_modules\tedious\lib\connection.js:1432:19
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  code: 'EPARAM',
+  number: 'EPARAM',
+  state: undefined,
+  originalError: 
+   { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.validateParameters (D:\intranet2\node_modules\tedious\lib\request.js:193:31)
+    at Connection.callProcedure (D:\intranet2\node_modules\tedious\lib\connection.js:1427:15)
+    at Immediate.parent.acquire [as _onImmediate] (D:\intranet2\node_modules\mssql\lib\tedious.js:1060:20)
+    at runCallback (timers.js:795:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+     message: 'Validation failed for parameter \'newsAndUpdatesId\'. Invalid number.',
+     code: 'EPARAM' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-15T20:51:24.429] [FATAL] controller - { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at D:\intranet2\node_modules\tedious\lib\connection.js:1432:19
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  code: 'EPARAM',
+  number: 'EPARAM',
+  state: undefined,
+  originalError: 
+   { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.validateParameters (D:\intranet2\node_modules\tedious\lib\request.js:193:31)
+    at Connection.callProcedure (D:\intranet2\node_modules\tedious\lib\connection.js:1427:15)
+    at Immediate.parent.acquire [as _onImmediate] (D:\intranet2\node_modules\mssql\lib\tedious.js:1060:20)
+    at runCallback (timers.js:795:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+     message: 'Validation failed for parameter \'newsAndUpdatesId\'. Invalid number.',
+     code: 'EPARAM' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-15T20:57:11.021] [FATAL] controller - { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at D:\intranet2\node_modules\tedious\lib\connection.js:1432:19
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  code: 'EPARAM',
+  number: 'EPARAM',
+  state: undefined,
+  originalError: 
+   { RequestError: Validation failed for parameter 'newsAndUpdatesId'. Invalid number.
+    at Request.validateParameters (D:\intranet2\node_modules\tedious\lib\request.js:193:31)
+    at Connection.callProcedure (D:\intranet2\node_modules\tedious\lib\connection.js:1427:15)
+    at Immediate.parent.acquire [as _onImmediate] (D:\intranet2\node_modules\mssql\lib\tedious.js:1060:20)
+    at runCallback (timers.js:795:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+     message: 'Validation failed for parameter \'newsAndUpdatesId\'. Invalid number.',
+     code: 'EPARAM' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-17T17:08:13.304] [FATAL] controller - Error: TypeError: Cannot read property 'map' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-17T20:22:16.137] [FATAL] controller - Error: TypeError: Cannot read property 'map' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:274:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-19T11:49:53.327] [FATAL] controller - Error: TypeError: Cannot read property 'map' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:275:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-19T11:53:05.093] [FATAL] controller - Error: TypeError: Cannot read property 'map' of undefined
+    at Object.exports.getInteractionForumsDataByIdService (D:\intranet2\src\service\InteractionForumsService.js:275:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:06:37.839] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:07:12.555] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:12:08.344] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-29T18:13:59.877] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-30T15:03:07.044] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-30T15:04:33.305] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-30T15:05:16.709] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T11:47:51.226] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T11:49:48.170] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T11:57:09.170] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T11:58:37.862] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T12:19:03.968] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T12:21:26.738] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T12:23:47.791] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T12:32:55.361] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T12:50:27.849] [FATAL] controller - { RequestError: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:862:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 201,
+  lineNumber: 0,
+  state: 4,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+  originalError: 
+   { Error: Procedure or function 'IntranetPortal_sp_getNewsAndUpdatesCategoryList' expects parameter '@employeeId', which was not supplied.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:860:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 201,
+        state: 4,
+        class: 16,
+        message: 'Procedure or function \'IntranetPortal_sp_getNewsAndUpdatesCategoryList\' expects parameter \'@employeeId\', which was not supplied.',
+        serverName: 'MER-SVR-0001',
+        procName: 'IntranetPortal_sp_getNewsAndUpdatesCategoryList',
+        lineNumber: 0,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T16:09:59.408] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventStartDate', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventStartDate', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventStartDate\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T17:30:25.731] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventStartDate', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventStartDate', table 'IntranetPortal.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventStartDate\', table \'IntranetPortal.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T19:59:40.798] [FATAL] controller - Error: TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:358:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T19:59:42.552] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T19:59:51.317] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:01:04.586] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:02:00.818] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:05:03.804] [FATAL] controller - { RequestError: Timeout: Request failed to complete in 15000ms
+    at Request.tds.Request.err [as userCallback] (D:\intranet2\node_modules\mssql\lib\tedious.js:912:19)
+    at Request._this.callback (D:\intranet2\node_modules\tedious\lib\request.js:60:27)
+    at Connection.message (D:\intranet2\node_modules\tedious\lib\connection.js:1952:24)
+    at Connection.dispatchEvent (D:\intranet2\node_modules\tedious\lib\connection.js:1004:38)
+    at MessageIO.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:884:18)
+    at emitNone (events.js:106:13)
+    at MessageIO.emit (events.js:208:7)
+    at ReadablePacketStream.<anonymous> (D:\intranet2\node_modules\tedious\lib\message-io.js:104:16)
+    at emitOne (events.js:116:13)
+    at ReadablePacketStream.emit (events.js:211:7)
+  code: 'ETIMEOUT',
+  number: 'ETIMEOUT',
+  state: undefined,
+  originalError: 
+   { RequestError: Timeout: Request failed to complete in 15000ms
+    at RequestError (D:\intranet2\node_modules\tedious\lib\errors.js:34:12)
+    at Connection.message (D:\intranet2\node_modules\tedious\lib\connection.js:1952:33)
+    at Connection.dispatchEvent (D:\intranet2\node_modules\tedious\lib\connection.js:1004:38)
+    at MessageIO.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:884:18)
+    at emitNone (events.js:106:13)
+    at MessageIO.emit (events.js:208:7)
+    at ReadablePacketStream.<anonymous> (D:\intranet2\node_modules\tedious\lib\message-io.js:104:16)
+    at emitOne (events.js:116:13)
+    at ReadablePacketStream.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     message: 'Timeout: Request failed to complete in 15000ms',
+     code: 'ETIMEOUT' },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-10-31T20:21:26.358] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:21:31.569] [FATAL] controller - Error: TypeError: Cannot read property 'overallPercentage' of undefined
+    at Object.exports.getInteractionForumsNewlyAddedData (D:\intranet2\src\service\InteractionForumsService.js:192:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:23:01.763] [FATAL] controller - Error: TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:361:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-10-31T20:25:50.546] [FATAL] controller - Error: TypeError: Cannot read property 'length' of null
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:361:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:22:44.591] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:26:20.858] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:30:09.741] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:37:03.712] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:55:45.425] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T11:59:58.033] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T12:06:18.399] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-13T12:10:01.015] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'updatedBy', table 'IntranetPortal.dbo.tbl_polling_options'; column does not allow nulls. UPDATE fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:367:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-11-28T13:33:59.542] [FATAL] controller - Error: Error: TypeError: Cannot read property 'map' of undefined
+    at Object.exports.startOrJoinDiscussion (D:\intranet2\src\service\InteractionForumsService.js:525:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-13T12:02:56.480] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:379:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-13T12:08:04.958] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:379:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-13T12:13:47.970] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:379:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-13T12:21:04.967] [FATAL] controller - Error: RequestError: Cannot insert the value NULL into column 'createdDate', table 'IntranetPortal_Test.dbo.tbl_polling_options'; column does not allow nulls. INSERT fails.
+    at Object.exports.startDiscussionService (D:\intranet2\src\service\InteractionForumsService.js:379:15)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2018-12-14T10:30:07.264] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventDescription', table 'IntranetPortal_Test.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventDescription', table 'IntranetPortal_Test.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventDescription\', table \'IntranetPortal_Test.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }
+[2018-12-14T10:30:13.036] [FATAL] controller - { RequestError: Cannot insert the value NULL into column 'eventDescription', table 'IntranetPortal_Test.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:546:15)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+  code: 'EREQUEST',
+  number: 515,
+  lineNumber: 1,
+  state: 2,
+  class: 16,
+  serverName: 'MER-SVR-0001',
+  procName: '',
+  originalError: 
+   { Error: Cannot insert the value NULL into column 'eventDescription', table 'IntranetPortal_Test.dbo.tbl_news_and_updates'; column does not allow nulls. INSERT fails.
+    at handleError (D:\intranet2\node_modules\mssql\lib\tedious.js:544:19)
+    at emitOne (events.js:116:13)
+    at Connection.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\connection.js:611:16)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at Parser.<anonymous> (D:\intranet2\node_modules\tedious\lib\token\token-stream-parser.js:54:15)
+    at emitOne (events.js:116:13)
+    at Parser.emit (events.js:211:7)
+    at addChunk (D:\intranet2\node_modules\readable-stream\lib\_stream_readable.js:291:12)
+     info: 
+      { number: 515,
+        state: 2,
+        class: 16,
+        message: 'Cannot insert the value NULL into column \'eventDescription\', table \'IntranetPortal_Test.dbo.tbl_news_and_updates\'; column does not allow nulls. INSERT fails.',
+        serverName: 'MER-SVR-0001',
+        procName: '',
+        lineNumber: 1,
+        name: 'ERROR',
+        event: 'errorMessage' } },
+  name: 'RequestError',
+  precedingErrors: [] }

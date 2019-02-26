@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Intranet</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,700" rel="stylesheet">
+<link rel="stylesheet" href="styles.5e28a016547002c1943e.css"></head>
+<body>
+  <app-root class="viewport vbox"></app-root>
+<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.2a14e98ded93e500c5b2.js"></script><script type="text/javascript" src="scripts.7dc20ca29d0eaaa46985.js"></script><script type="text/javascript" src="main.e8e015c787bc3f4772be.js"></script></body>
+</html>

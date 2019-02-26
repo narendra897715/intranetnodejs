@@ -1,0 +1,85 @@
+<div fxLayout="column" fxFlex style="background-color: white;border-radius:5px" class="appreciation">
+  <div fxLayout="row" fxFlex>
+    <div fxLayout="column" fxFlex>
+      <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap.xs="2px" style="padding-bottom:10px;border-bottom:1px solid lavender;margin:10px">
+        <div fxLayoutAlign="center center" class="searchbox">
+          <input aria-label="search" placeholder="Search" (keyup.enter)='searchNewJoinees()'  [(ngModel)]="joinees.search" type="search" style="border:none;background-color: #ebebeb;">
+          <img [src]="'assets/Intranet-Icons/search.svg'" width="18" height="18" (click)="searchNewJoinees()">
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+          <span class="funnel">
+            <img [src]="'./assets/Intranet-Icons/filter.svg'" width="18" height="18">
+          </span>
+          <div class="filterbox">
+            <mat-select [(ngModel)]="joinees.filterId" (selectionChange)="searchNewJoinees()" placeholder="This Week">
+              <mat-option *ngFor="let i of timeFilterList" [value]="i.newsAndUpdatesFilterId">
+                {{i.filter}}
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlex fxLayout="column" style="overflow:auto" *ngIf="newjoinee.length !=0">
+        <perfect-scrollbar (psYReachEnd)="onScrollEvent($event)">
+          <div *ngFor="let i of newjoinee">
+            <div fxFlex fxLayout="column">
+              <div class="gap">
+                <b style="cursor:pointer">
+                  <span style="color: #363084" [mdePopoverTriggerFor]="appPopover" mdePopoverTriggerOn="hover">{{i.EmployeeName}}
+                  </span>
+                  <mde-popover #appPopover="mdePopover" [mdePopoverOverlapTrigger]="false">
+                    <mat-card style="max-width: 200px; height: 10px !important">
+                      <mat-card-content>
+                        <img [src]="'assets/Intranet-Icons/user.svg'" (click)="gotoEmployeePage(i.createdBy)" style="width:15px; height:15px; margin-right:8px">
+                        <a href="{{i.mail}}">
+                          <img [src]="'assets/Intranet-Icons/outlook.svg'" style="width:15px; height:15px; margin-right:8px">
+                        </a>
+                        <a [href]="sanitize(i.skype)">
+                          <img [src]="'assets/Intranet-Icons/skype.svg'" style="width:15px; height:15px;">
+                        </a>
+                      </mat-card-content>
+                    </mat-card>
+                  </mde-popover>
+                </b>
+              </div>
+              <div class="gap">
+                <span>
+                  <span class="texttile">{{i.designation}}</span> &nbsp; joined on &nbsp;&nbsp;
+                  <img [src]="'assets/Intranet-Icons/clock.svg'" style="width:15px; height:15px;"> &nbsp;&nbsp;{{i.dateOfJoining | date}}
+                </span>
+              </div>
+              <div fxLayout="row wrap" class="gap">
+                <div fxFlex="33">
+                  <span fxFlex="40" style="color:#363084">Fathers name: </span>
+                  <span fxFlex="50" class="detailstile">{{i.fatherName}}</span>
+                </div>
+                <div fxFlex="33">
+                  <span fxFlex="40" style="color:#363084">Employee ID: </span>
+                  <span fxFlex="50" class="detailstile">{{i.employeeId}}</span>
+                </div>
+                <div fxFlex="33">
+                  <span fxFlex="40" style="color:#363084">Work Location: </span>
+                  <span fxFlex="50" class="detailstile">{{i.workLocation}}</span>
+                </div>
+              </div>
+              <div fxLayout="row wrap" class="gap">
+                <div fxFlex="33">
+                  <span fxFlex="40" style="color:#363084">Reporting Manager: </span>
+                  <span fxFlex="50" class="detailstile">{{i.reportingManager}}</span>
+                </div>
+                <div fxFlex="33">
+                  <span fxFlex="40" style="color:#363084">Domain: </span>
+                  <span fxFlex="50" class="detailstile">{{i.domain}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </perfect-scrollbar>
+      </div>
+      <div *ngIf="newjoinee.length ==0" fxFlex fxLayoutAlign="center center">
+        No Data Available
+      </div>
+    </div>
+  </div>
+</div>

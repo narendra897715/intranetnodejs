@@ -1,0 +1,27 @@
+var env = process.env.NODE_ENV || 'development';
+
+
+
+if(env==='development'){
+    process.env.PORT=3000;
+    process.env.EMAIL_ID='sameer_shaik@merilytics.com';
+    process.env.HYPER_LINK='http://apps.merilytics.com:8080/Authentication/#/';
+    process.env.REDIS_DELAY=60;
+    process.env.ANNIVERSARY_IMAGE='https://i.postimg.cc/SRgp8mXt/anniversary.png';
+    process.env.BIRTHDAY_IMAGE='https://i.postimg.cc/G3KR6xMJ/Happy-Birthday-Images.jpg';
+    process.env.THANKS_IMAGE='https://i.postimg.cc/tCgbbnw0/THANK-YOU.jpg';
+    process.env.UPDATE_IMAGE='https://i.postimg.cc/rFYkwF2D/Update.jpg';
+    process.env.DB_NAME='IntranetPortal';
+    process.env.LOG_RANGE='dev';
+}else if(env==='production'){
+    process.env.PORT=3008;
+    process.env.EMAIL_ID='sphurthi_konda@merilytics.com';
+    process.env.HYPER_LINK='http://apps.merilytics.com:8080/Authentication/#/';
+    process.env.REDIS_DELAY=60;
+    process.env.ANNIVERSARY_IMAGE='https://i.postimg.cc/SRgp8mXt/anniversary.png';
+    process.env.BIRTHDAY_IMAGE='https://i.postimg.cc/G3KR6xMJ/Happy-Birthday-Images.jpg';
+    process.env.THANKS_IMAGE='https://i.postimg.cc/tCgbbnw0/THANK-YOU.jpg';
+    process.env.UPDATE_IMAGE='https://i.postimg.cc/rFYkwF2D/Update.jpg';
+    process.env.DB_NAME='IntranetPortal';
+    process.env.LOG_RANGE='prod';
+}

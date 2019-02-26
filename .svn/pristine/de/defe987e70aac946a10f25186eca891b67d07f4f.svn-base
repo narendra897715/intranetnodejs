@@ -1,0 +1,48 @@
+<div fxFlex fxLayout="column">
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center" style="background-color:#edf0f3; height:55px;">
+    <span class="color-toolbar-header">Appreciate</span>
+    <mat-icon (click)="onNoClick()" class="color" style="cursor: pointer">&#xE5CD;</mat-icon>
+  </mat-toolbar>
+  <div mat-dialog-content>
+    <form fxLayout="column" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" style="padding:20px;" [formGroup]="form">
+
+      <div fxFlex="30" fxLayout="row" *ngIf="mainPage == null">
+        <!-- <mat-form-field fxFlex="30">
+          <mat-select name="employeeSelection" placeholder="Choose Employee">
+            <mat-option *ngFor="let i of employee_names" [value]="i.employeeId">
+              {{i.employeeName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <mat-form-field fxFlex="30" style="padding: 0 16px">
+          <input matInput placeholder="Choose Employee" required aria-label="Keyword" [matAutocomplete]="auto" [(ngModel)]="employeeSearch"
+            [formControl]="autoCompleteCtrl">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let i of filteredData" [value]="i.employeeName" style="line-height: 16px !important; height: 50px;">
+              {{i.employeeName}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div fxFlex="80" fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxFlex fxLayout="column">
+          <mat-form-field fxFlex appearance="outline" class="appreciation-box">
+            <textarea matInput name="AppreciationContent" formControlName="appreciation_content" placeholder="Write your appreciation message here.."
+              style="height:100px"></textarea>
+          </mat-form-field>
+          <div *ngIf="form.controls['appreciation_content'].hasError('maxlength')">
+            <span style="color:red; font-size: 11px">Max character count exceeded.</span>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlex="10" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 18px;">
+        <button mat-raised-button class="submit" *ngIf="mainPage != null" [disabled]="!form.valid" (click)="sendAppreciation()">Submit</button>
+        <button mat-raised-button class="submit" *ngIf="mainPage == null" [disabled]="!employeeSearch || !form.valid" (click)="sendAppreciation()">Submit</button>
+        <button mat-raised-button class="cancel" (click)="onNoClick()">Cancel</button>
+
+      </div>
+    </form>
+  </div>
+
+</div>

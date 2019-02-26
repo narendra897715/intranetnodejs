@@ -1,0 +1,1636 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "One place to know about company events, activities and etc.",
+        "version": "1.0.0",
+        "title": "Intranet Portal",
+        "contact": {
+            "email": "sameer_shaik@merilytics.com"
+        }
+    },
+    "host": "localhost:3008",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "News & Updates",
+            "description": "Everything about your News & Updates",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": ""
+            }
+        },
+        {
+            "name": "Employees",
+            "description": "Basic employee info."
+        },
+        {
+            "name": "Interaction Forums",
+            "description": "Employee Interaction Forums."
+        },
+        {
+            "name": "Resources",
+            "description": "Resources and Forms."
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/news&updates/getSubMenu": {
+            "get": {
+                "tags": [
+                    "News & Updates"
+                ],
+                "summary": "Main menu sub tabs.",
+                "description": "Object will contain details required for tabs",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/news&updates/getSubMenu"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/getEmployeeDetails": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "fetches entire org active employee details.",
+                "description": "fetches entire org active employee details.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass pagination obj",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/employeePagination"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/employeeDetails"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/getEmployeeDetailsById": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "fetches employee details by id.",
+                "description": "fetches employee details by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass any employee id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/employeeId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/employeeDetails"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/getEmployeeDetailsWithToken": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "fetches employee details by id.",
+                "description": "fetches employee details by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass any employee id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/token"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/employeeDetails"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/getAppreciations": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "fetches employee details by id.",
+                "description": "fetches employee details by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass any employee id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/appreciationPagination"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/employeeDetails"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/getAppreciationsById": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "fetches appreciations details by id.",
+                "description": "fetches appreciations details by id.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass any employee id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/employeeId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/appreciations"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/sendAppreciations": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "Appreciate employee",
+                "description": "Appreciate employee",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/appreciate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/employeeSorting": {
+            "get": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "Employee Sorting drop down.",
+                "description": "Employee Sorting drop down.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SortingDropDown"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/employeeSiloView": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "Employee silo view",
+                "description": "Employee silo view",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/employeeId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/siloView"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/employee/getEmployeeDetailsDropDown": {
+            "post": {
+                "tags": [
+                    "Employees"
+                ],
+                "summary": "Employee silo view",
+                "description": "Employee silo view",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/employeeNameSearch"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/siloView"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/pollingExcelDownload": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Employee silo view",
+                "description": "Employee silo view",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionForumsId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/siloView"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/getInteractionForumsTrendingDetails": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionForumsPagination"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/interactionForumsDataDisplay"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/getCategoryDropDown": {
+            "get": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Category drop down.",
+                "description": "Category drop down.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/categoryDropDown"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/getInteractionForumsNewlyAddedDetails": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionForumsPagination"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/interactionForumsDataDisplay"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/getInteractionForumsMostCommentedDetails": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionForumsPagination"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/interactionForumsDataDisplay"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/getInteractionForumsDataByID": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionsForumsId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/interactionForumsDataDisplay"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/uploadImageToExistingDiscussion": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionsForumsImageUpload"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/postAnDiscussion": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/interactionsForumsStartDiscussion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/savePollingOption": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/savePollingOption"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/likeOrDislike": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/likeOrDislike"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/getPollingEmployeeInfo": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/pollingOptions"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/pollingInfo"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/interaction_forums/startOrJoinDiscussion": {
+            "post": {
+                "tags": [
+                    "Interaction Forums"
+                ],
+                "summary": "Interaction Forums data display",
+                "description": "Interaction Forums data display",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/startOrJoinDiscussion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/interactionForumsDataDisplay"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/getResourcesPolicies": {
+            "post": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Forms and Policies",
+                "description": "Page contains forms and policies",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/searchData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/policiesData"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/getResourcesForms": {
+            "post": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Forms and Policies",
+                "description": "Page contains forms and policies",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/searchData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/policiesData"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/getCategoryDropDown": {
+            "get": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Category drop down.",
+                "description": "Category drop down.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/resourcesDropDown"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/getFileByID": {
+            "post": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Forms and Policies",
+                "description": "Page contains forms and policies",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/fileInputs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/fileOutputs"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/uploadFile": {
+            "post": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Forms and Policies",
+                "description": "Page contains forms and policies",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/fileUploadInputs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/deleteFile": {
+            "post": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Forms and Policies",
+                "description": "Page contains forms and policies",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/fileDeleteInputs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        },
+        "/resources/getUserApps": {
+            "post": {
+                "tags": [
+                    "Resources"
+                ],
+                "summary": "Forms and Policies",
+                "description": "Page contains forms and policies",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "pass the specified fields in sample data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/employeeId"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/message"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Error occurred while fetching"
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "petstore_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+            "flow": "implicit",
+            "scopes": {
+                "write:pets": "modify pets in your account",
+                "read:pets": "read your pets"
+            }
+        },
+        "api_key": {
+            "type": "apiKey",
+            "name": "api_key",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "employeeId": {
+            "type": "object",
+            "properties": {
+                "employeeId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "employeeId": 21258
+            }
+        },
+        "employeePagination": {
+            "type": "object",
+            "properties": {
+                "search": {
+                    "type": "string"
+                },
+                "workLocationId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "filterId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "pageNo": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "search": null,
+                "workLocationId": null,
+                "sortById": null,
+                "pageNo": 1,
+                "pageSize": 10
+            }
+        },
+        "appreciations": {
+            "type": "object",
+            "properties": {
+                "employeeId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "appreciationWallId": 5,
+                "appreciationTo": 21258,
+                "appreciationToName": "Sameer Shaik",
+                "appreciatedBy": 21130,
+                "appreciatedByName": "Sarath Kumardfgdfgdfg Gogineni",
+                "contentOfAppreciation": "bla bla",
+                "appreciatedTime": "2018-08-20T20:20:48.283Z",
+                "createdBy": 21130,
+                "createdByName": "Sarath Kumardfgdfgdfg Gogineni",
+                "updatedBy": 21130,
+                "updatedByName": "Sarath Kumardfgdfgdfg Gogineni",
+                "createdDate": "2018-08-20T20:20:52.497Z",
+                "updatedDate": "2018-08-20T20:20:38.267Z"
+            }
+        },
+        "appreciate": {
+            "type": "object",
+            "properties": {
+                "appreciatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "appreciationTo": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "contentOfAppreciation": {
+                    "type": "string"
+                },
+                "createdBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "updatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "appreciatedBy": 21100,
+                "appreciationTo": 21102,
+                "contentOfAppreciation": "bla bla 222",
+                "createdBy": 21130,
+                "updatedBy": 21130
+            }
+        },
+        "employeeDetails": {
+            "type": "object",
+            "properties": {
+                "employeeId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "employeeId": 21258,
+                "employeeName": "Sameer Shaik",
+                "dateOfJoining": "2017-02-20T00:00:00.000Z",
+                "designation": "Analyst (IT)",
+                "domain": "Technology",
+                "technologiesKnown": "-",
+                "reportingManager": "Sarath Kumar Gogineni",
+                "workLocation": "KKR Square",
+                "email": "sameer_shaik@merilytics.com",
+                "skype": "sip:sameer_shaik@merilytics.com",
+                "mail": "mailto:sameer_shaik@merilytics.com"
+            }
+        },
+        "message": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "message": "Appreciations sent successfully."
+            }
+        },
+        "SortingDropDown": {
+            "type": "object",
+            "properties": {},
+            "example": [
+                {
+                    "sortById": 1,
+                    "sortingName": "Employee ID"
+                },
+                {
+                    "sortById": 2,
+                    "sortingName": "Employee Name"
+                },
+                {
+                    "sortById": 3,
+                    "sortingName": "Date of Joining"
+                }
+            ]
+        },
+        "siloView": {
+            "type": "object",
+            "properties": {},
+            "example": [
+                {
+                    "EmployeeID": 21100,
+                    "employeeName": "Paavan Choudary",
+                    "immediateReportingManagerID": null,
+                    "designation": "CEO",
+                    "emailID": "paavan@merilytics.com",
+                    "dateOfJoining": "2011-01-01T00:00:00.000Z",
+                    "EmpLevel": -2
+                }
+            ]
+        },
+        "interactionForumsDataDisplay": {
+            "type": "object",
+            "properties": {},
+            "example": [
+                {
+                    "result": [
+                        {
+                            "interactionForumsId": 4,
+                            "newsAndUpdatesId": 58,
+                            "categoryId": 3,
+                            "categoryName": "News & Updates",
+                            "eventName": "Best Employee Award",
+                            "colourCode": "#98B243 ",
+                            "eventDescription": "This year best employee Award goes to XYZ.Congrtas!",
+                            "eventStartDate": 1533624709380,
+                            "eventEndDate": 1535730729777,
+                            "createdBy": 21100,
+                            "createdByName": "Paavan Choudary",
+                            "updatedBy": 21102,
+                            "updatedByName": "Srujandfsdf Gottemukkala",
+                            "createdDate": 1533570866723,
+                            "updatedDate": 1533657278993,
+                            "CLDData": [
+                                {
+                                    "commentsCount": 4,
+                                    "likesCount": 1,
+                                    "dislikesCount": 1
+                                }
+                            ],
+                            "imageData": [
+                                {
+                                    "imageId": 43,
+                                    "imageName": "Best Employee Image",
+                                    "imageType": "type",
+                                    "image": "best employee"
+                                },
+                                {
+                                    "imageId": 50,
+                                    "imageName": "Best Employee",
+                                    "imageType": "type",
+                                    "image": "best employee Image"
+                                },
+                                {
+                                    "imageId": 53,
+                                    "imageName": "best employee",
+                                    "imageType": "type ",
+                                    "image": "best employee"
+                                }
+                            ]
+                        }
+                    ],
+                    "pages": 1,
+                    "rowCount": 1
+                }
+            ]
+        },
+        "interactionForumsPagination": {
+            "type": "object",
+            "properties": {
+                "search": {
+                    "type": "string"
+                },
+                "categoryId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "pageNo": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "search": null,
+                "categoryId": 3,
+                "pageNo": 1,
+                "pageSize": 10,
+                "employeeId": 21258
+            }
+        },
+        "categoryDropDown": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "categoryId": 1,
+                "categoryName": "Events",
+                "typeId": 1,
+                "colourCode": "#EE603B ",
+                "categoryURL": "events",
+                "serviceURL": "news&updates/eventDetails"
+            }
+        },
+        "interactionsForumsId": {
+            "type": "object",
+            "properties": {
+                "interactionForumsId": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "example": {
+                "interactionForumsId": 22,
+                "employeeId": 21258,
+                "categoryId": 7
+            }
+        },
+        "interactionsForumsImageUpload": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "imageData": [
+                    {
+                        "imageType": "type",
+                        "imageName": "my new image",
+                        "Image": "s;test data",
+                        "updatedBy": 21258,
+                        "createdBy": 21258
+                    },
+                    {
+                        "imageType": "test",
+                        "imageName": "test image",
+                        "Image": "s;test data",
+                        "updatedBy": 21258,
+                        "createdBy": 21258
+                    }
+                ],
+                "interactionForumsId": 48
+            }
+        },
+        "interactionsForumsStartDiscussion": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "categoryId": 1,
+                "eventStartDate": "2018/08/03 16:12:14",
+                "eventEndDate": "2018/08/03 16:12:14",
+                "eventName": "discussion name",
+                "eventDescription": "discussion",
+                "updatedBy": 21258,
+                "createdBy": 21258,
+                "imageData": [
+                    {
+                        "imageType": "type",
+                        "imageName": "my new image",
+                        "Image": "s;test data",
+                        "updatedBy": 21258,
+                        "createdBy": 21258
+                    },
+                    {
+                        "imageType": "test",
+                        "imageName": "test image",
+                        "Image": "s;test data",
+                        "updatedBy": 21258,
+                        "createdBy": 21258
+                    }
+                ],
+                "pollingOptions": [
+                    {
+                        "optionDescription": "option1",
+                        "updatedBy": 21258,
+                        "createdBy": 21258
+                    },
+                    {
+                        "optionDescription": "option2",
+                        "updatedBy": 21258,
+                        "createdBy": 21258
+                    }
+                ]
+            }
+        },
+        "savePollingOption": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "optionOptedId": 16,
+                "optionId": 2,
+                "optedBy": 21258,
+                "createdBy": 21258,
+                "updatedBy": 21258
+            }
+        },
+        "likeOrDislike": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "interactionForumsId": 22,
+                "employeeId": 21258,
+                "liked": true
+            }
+        },
+        "pollingInfo": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "optionOptedId": 2,
+                "employeeId": 21258,
+                "employeeName": "Sameer Shaik",
+                "employeeDesignation": "Analyst (IT)",
+                "workLocation": "KKR Square",
+                "optionId": 2,
+                "optionDescription": "Yes I will attend",
+                "createdDate": "2018-09-21T16:18:25.707Z"
+            }
+        },
+        "pollingOptions": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "interactionForumsId": 47,
+                "optionId": 2
+            }
+        },
+        "startOrJoinDiscussion": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "newsAndUpdatesId": 89,
+                "enteredTheDiscussion": false,
+                "createdBy": 21258,
+                "updatedBy": 21258,
+                "employeeId": 21258
+            }
+        },
+        "searchData": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "search": null,
+                "categoryId": null,
+                "pageNo": 1,
+                "pageSize": 10
+            }
+        },
+        "policiesData": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "result": [
+                    {
+                        "rowNumber": "1",
+                        "fileId": 11,
+                        "fileName": "fee reimbursement",
+                        "fileType": "pdf",
+                        "resourcesCategoryId": 2,
+                        "resourcesCategoryName": "Forms",
+                        "createdBy": 21258,
+                        "createdByName": "Sameer Shaik",
+                        "updatedBy": 21258,
+                        "updatedByName": "Sameer Shaik",
+                        "createdDate": 1538049733003,
+                        "updatedDate": 1538049735717,
+                        "totalCount": 3
+                    },
+                    {
+                        "rowNumber": "2",
+                        "fileId": 8,
+                        "fileName": "cbsdahbc af",
+                        "fileType": "pdf",
+                        "resourcesCategoryId": 2,
+                        "resourcesCategoryName": "Forms",
+                        "createdBy": 21280,
+                        "createdByName": "Tejeswi Muthireddy",
+                        "updatedBy": 21280,
+                        "updatedByName": "Tejeswi Muthireddy",
+                        "createdDate": 1538045716503,
+                        "updatedDate": 1538045718930,
+                        "totalCount": 3
+                    },
+                    {
+                        "rowNumber": "3",
+                        "fileId": 6,
+                        "fileName": "bla bla",
+                        "fileType": "pdf",
+                        "resourcesCategoryId": 2,
+                        "resourcesCategoryName": "Forms",
+                        "createdBy": 21258,
+                        "createdByName": "Sameer Shaik",
+                        "updatedBy": 21258,
+                        "updatedByName": "Sameer Shaik",
+                        "createdDate": 1537874424977,
+                        "updatedDate": 1537874427523,
+                        "totalCount": 3
+                    }
+                ],
+                "pages": 1,
+                "rowCount": 3
+            }
+        },
+        "resourcesDropDown": {
+            "type": "object",
+            "properties": {},
+            "example": [
+                {
+                    "sortById": 1,
+                    "sortingName": "File Name"
+                },
+                {
+                    "sortById": 2,
+                    "sortingName": "Uploaded Date"
+                }
+            ]
+        },
+        "fileInputs": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "fileId": 4
+            }
+        },
+        "fileOutputs": {
+            "type": "object",
+            "properties": {},
+            "example": [
+                {
+                    "fileId": 4,
+                    "resourcesCategoryId": 1,
+                    "file": "bla bla",
+                    "fileName": "asfjbnfb n fgg",
+                    "fileType": "pdf",
+                    "createdBy": 21258,
+                    "updatedBy": 21258,
+                    "createdDate": "2018-09-25T11:19:37.353Z",
+                    "updatedDate": "2018-09-25T11:19:41.613Z"
+                }
+            ]
+        },
+        "fileUploadInputs": {
+            "type": "object",
+            "properties": {},
+            "example": [
+                {
+                    "resourcesCategoryId": 2,
+                    "files": "this is the doc",
+                    "fileName": "test doc",
+                    "fileType": "pdf",
+                    "createdBy": 21258,
+                    "updatedBy": 21258
+                }
+            ]
+        },
+        "fileDeleteInputs": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "fileId": 13
+            }
+        },
+        "appreciationPagination": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "employeeId": 21258,
+                "pageNo": 1,
+                "pageSize": 10
+            }
+        },
+        "token": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "token": "353472ce8fad6c70"
+            }
+        },
+        "employeeNameSearch": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "employeeId": 21258,
+                "searchData": "s"
+            }
+        },
+        "interactionForumsId": {
+            "type": "object",
+            "properties": {},
+            "example": {
+                "interactionForumsId": 47
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}

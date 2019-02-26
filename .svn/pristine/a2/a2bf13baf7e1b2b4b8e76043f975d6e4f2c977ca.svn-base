@@ -1,0 +1,22 @@
+.mat-form-field-wrapper{
+    padding-bottom: 0px !important;
+  }
+  .mat-form-field{
+      width:100%;
+  }
+  .OptionAddButtonbefore {
+    width:30px; height:30px;padding: 10px;
+    pointer-events: none;
+  }
+  .OptionAddButtonafter{
+    width:30px; height:30px;padding: 10px;
+    pointer-events: auto;
+  }
+
+  .submit-active {
+    background-image: linear-gradient(#ffbd6d, #ff917b);
+  }
+
+  .submit-inactive {
+      background-image: grey;
+  }

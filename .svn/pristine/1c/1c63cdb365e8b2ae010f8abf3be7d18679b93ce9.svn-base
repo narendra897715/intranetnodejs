@@ -1,0 +1,47 @@
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #EEEFF1
+}
+
+.mat-dialog-content {
+    margin: 0px !important;
+}
+
+.submit {
+    width: 80px;
+    height: 40px; //  padding: 6px;
+    color: white;
+    background-color: #363084;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 14px !important;
+    cursor: pointer;
+}
+
+.cancel {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    background-color: #ddd;
+    //    padding: 6px;
+    border-radius: 10px;
+    font-size: 14px !important;
+    cursor: pointer;
+}
+
+.text-area-style {
+    .mat-form-field-wrapper {
+        padding-bottom: 0px !important;
+        padding-top: 5px !important;
+    }
+    .mat-form-field {
+        width: 100%;
+    }
+}
+
+.mat-form-field-prefix .mat-icon-button, .mat-form-field-suffix .mat-icon-button {
+    color: #139c9a;
+}

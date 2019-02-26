@@ -1,0 +1,263 @@
+var express = require('express');
+var router = express.Router();
+// const redis = require('redis');
+// const client = redis.createClient({host: 'redis'});
+
+var { log4js } = require('./../utils/log-conf/logger');
+var logger = log4js.getLogger('controller');
+var { getSubMenu, getCategory, postAnUpdate } = require('./../dao/NewsAndUpdatesDAO');
+var NewsAndUpdatesService = require('./../service/NewsAndUpdatesService');
+
+//var { uploadImages, getTodayHighlights } = require('./../dao/NewsAndUpdatesDAO');
+
+var SendMail = require('./../mail/SendMail');
+
+var EmailTemplate = require('./../mail/EmailTemplate');
+
+/* GET home page. */
+router.get('/getSubMenu', (req, res) => {
+    NewsAndUpdatesService.fetchSubMenu((err, data) => {
+        if (err) {
+
+            logger.fatal(err);
+            res.status(404).json(`${err}`);
+        }
+        //console.log(data);
+        res.send(data);
+    });
+});
+//adding a new service
+router.get('/getCategoryList', (req, res) => {
+    NewsAndUpdatesService.fetchCategoryList((err, data) => {
+        if (err) {
+
+            logger.fatal(err);
+            res.status(404).json(`${err}`);
+        }
+        res.status(200).send(data);
+    });
+});
+
+router.post('/postAnUpdate', (req, res) => {
+
+    try {
+        NewsAndUpdatesService.postAnUpdateService(req.body, (err, result) => {
+            if (err) {
+                logger.fatal(err);
+                res.status(404).json(`${err}`);
+                // res.status(400).send('some error occured');
+            } else {
+                res.json(result);
+            }
+
+        });
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+        // res.status(400).send('failed');
+    }
+});
+
+
+router.post('/uploadImageToExistingPost', (req, res) => {
+
+    try {
+        NewsAndUpdatesService.uploadNewImage(req.body, (err, result) => {
+            if (err) {
+                logger.fatal(err);
+                res.status(404).json(`${err}`);
+            } else {
+                res.json(result);
+            }
+
+        });
+
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    }
+});
+
+
+
+router.get('/eventsInfo', (req, res) => {
+    NewsAndUpdatesService.getEventsInfo((err, data) => {
+        if (err) {
+            logger.fatal(err);
+            res.status(404).json(`${err}`);
+        }
+        res.send(data);
+    });
+});
+
+
+router.get('/industryNews', async (req, res) => {
+
+    try {
+
+        var data = await NewsAndUpdatesService.getIndustryNewsInfo();
+        res.send(data);
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    }
+
+
+});
+
+router.post('/recentlyPostedDetails', (req, res) => {
+    // var key = 'random';
+    // client.get(key, (err, result) => {
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     if (result) {
+    //         res.send(result);
+    //     } else {
+    //         NewsAndUpdatesService.fetchRecentlyPostedDetails(req.body).then((data) => {
+    //             //const unique = [...new Set(data.map((item) => item))];
+    //             client.setex(key, 60, JSON.stringify(data));
+    //             res.send(data);
+    //             // asdas 
+    //         }).catch((err) => {
+    //             logger.fatal(err);
+    //             res.status(404).json(`${err}`);
+    //         })
+    //     }
+    // });
+
+    try {
+        NewsAndUpdatesService.fetchRecentlyPostedDetails(req.body).then((data) => {
+            //const unique = [...new Set(data.map((item) => item))];
+            res.send(data);
+            // asdas 
+        })
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+
+    }
+
+
+
+});
+
+router.post('/recentlyPostedDetailsByID', (req, res) => {
+    //    var data = await  getIndustryNewsInfo();
+    //    res.send(data);
+    try {
+        NewsAndUpdatesService.fetchRecentlyPosteddDetailsByID(req.body.newsAndUpdatesId).then((data) => {
+            //const unique = [...new Set(data.map((item) => item))];
+            res.send(data);
+            // asdas 
+        })
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+
+    }
+
+});
+
+router.post('/eventDetails', (req, res) => {
+
+    NewsAndUpdatesService.fetchEventDetails(req.body).then((data) => {
+        // const unique = [...new Set(data.map((item) => item))];
+        res.send(data);
+        // asdas 
+    }).catch((err) => {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    })
+});
+
+router.post('/managementCommunicationsDetails', (req, res) => {
+
+    NewsAndUpdatesService.fetchManagementCommunicationDetails(req.body).then((data) => {
+        // const unique = [...new Set(data.map((item) => item))];
+        res.send(data);
+        // asdas 
+    }).catch((err) => {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    })
+});
+
+router.post('/awardsDetails', (req, res) => {
+
+    NewsAndUpdatesService.fetchAwardsDetails(req.body).then((data) => {
+        // const unique = [...new Set(data.map((item) => item))];
+        res.send(data);
+        // asdas 
+    }).catch((err) => {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    })
+});
+
+router.post('/newJoineeDetails', (req, res) => {
+
+    NewsAndUpdatesService.fetchNewJoineesDetails(req.body).then((data) => {
+        // const unique = [...new Set(data.map((item) => item))];
+        res.send(data);
+        // asdas 
+    }).catch((err) => {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    })
+});
+
+
+router.get('/newsAndUpdatesFilter', (req, res) => {
+
+    NewsAndUpdatesService.fetchNewsAndUpdatesFilter().then((data) => {
+        // const unique = [...new Set(data.map((item) => item))];
+        res.send(data);
+        // asdas 
+    }).catch((err) => {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    })
+});
+
+router.post('/sendWishes', (req, res) => {
+    var template = null;
+    var subject = null;
+    if (req.body.yearsOfExperience === null) {
+        subject = 'Happy Birthday - ' + req.body.employeeName;
+        template = EmailTemplate.sendBirthdayWishes(req.body);
+
+    } else {
+        subject = 'Work Anniversary - ' + req.body.employeeName;
+        template = EmailTemplate.sendWorkAnniversaryWishes(req.body);
+    }
+
+    SendMail.sendMail(req.body.email, subject, template).then((data) => {
+
+        res.json("Email sent successfully");
+    });
+    // var data = emailSend.sendMail('','','');
+});
+
+router.post('/deleteImage', async (req, res) => {
+    try {
+        var result = await NewsAndUpdatesService.deleteImagePosted(req.body.imageId)
+
+        res.send({ "imageId": req.body.imageId, "status": "Deleted successfully" });
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    }
+})
+
+router.post('/calendarDetails', async (req, res) => {
+    try {
+        const result = await NewsAndUpdatesService.fetchCalendarInfo(req.body.date);
+        res.send(result);
+    } catch (err) {
+        logger.fatal(err);
+        res.status(404).json(`${err}`);
+    }
+})
+
+module.exports = router;

@@ -1,0 +1,358 @@
+import { Component, OnInit, Inject, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Itab } from '../app.interface';
+import { BusinessLogicService } from '../business-logic.service';
+import { IPostupdateobject, ImageProperties } from '../app.interface';
+import { MatSnackBar } from '@angular/material';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
+import { ConfirmDailogComponent } from './../confirm-dailog/confirm-dailog.component';
+@Component({
+  selector: 'app-editpopupmodal',
+  templateUrl: './editpopupmodal.component.html',
+  styleUrls: ['./editpopupmodal.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+export class EditpopupmodalComponent implements OnInit {
+  onEdit = new EventEmitter();
+  submenu: Itab[];
+  public submenu_dasboard: Itab[];
+  form: FormGroup;
+  removable = true;
+  onAdd = new EventEmitter();
+  pictureBase: string;
+  data_source: Itab[] = [];
+  post_edit: boolean;
+  categoryIdSelected;
+  file: any;
+  imageobject: ImageProperties[] = [];
+  count = 0;
+  sizeexceedsfilename: string = null;
+  onlyimagewarning: string = null;
+  imageOption: any;
+  ceodeskOption: any;
+  starttimeupdate: string;
+  endtimeupdate: string;
+  Stimehours: any;
+  Etimehours: any;
+  Stimeminutes: any;
+  Etimeminutes: any;
+  // selectedDate = new Date();
+  datePickerConfig = {
+    format : 'hh:mm a'
+  }
+ 
+  constructor(
+    public dialogRef: MatDialogRef<EditpopupmodalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private businesslogic: BusinessLogicService,
+    private formBuilder: FormBuilder, public snackBar: MatSnackBar, public dialog: MatDialog) { }
+
+  ngOnInit() {
+    console.log(this.data.editingdata);
+    this.ceodeskOption = this.data.editingdata;
+    this.imageOption = this.data.editingdata;
+    if (this.data.from === 'news&update') {
+      this.businesslogic.post('news&updates/getCategoryList', { employeeId: this.businesslogic.employeeId }).subscribe((response: any) => {
+        this.submenu_dasboard = response;
+        if (this.data.editingdata === 2) {
+          this.categoryIdSelected = this.submenu_dasboard[3].categoryId ? this.submenu_dasboard[3].categoryId : '';
+        }
+      });
+    } else {
+      this.businesslogic.get('interaction_forums/getCategoryDropDown').subscribe((response: any) => {
+        this.submenu = response;
+      });
+    }
+    if (this.data.editingdata === 1 || this.data.editingdata === 2) {
+      this.post_edit = true;
+      this.form = this.formBuilder.group({
+        categoryId: [null, Validators.required],
+        eventStartDate: [null, Validators.required],
+        eventEndDate: [null],
+        eventEndTime : [null],
+        eventStartTime : [null],
+       
+        // tslint:disable-next-line:max-line-length
+        eventName: [null, [Validators.required, Validators.maxLength(150), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[^0-9]/)]],
+        // tslint:disable-next-line:max-line-length
+        eventDescription: [null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[^0-9]/)]],
+        updatedBy: [this.businesslogic.employeeId],
+        createdBy: [this.businesslogic.employeeId],
+        imageData: [[]]
+      });
+    } else if (this.data.editingdata !== 1 && this.data.editingdata !== 2) {
+      this.post_edit = false;
+      if(this.data.editingdata.eventStartDate != null){
+        if(this.data.editingdata.eventStartDate.getHours() > 12 && this.data.editingdata.eventStartDate.getMinutes() >= 1){
+    
+          if((this.data.editingdata.eventStartDate.getHours() - 12) < 10 && this.data.editingdata.eventStartDate.getMinutes()<10){
+            this.starttimeupdate  = "0"+(this.data.editingdata.eventStartDate.getHours()-12) + ':' + "0"+this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'pm';
+  
+          }
+          else if((this.data.editingdata.eventStartDate.getHours() - 12)<10 && this.data.editingdata.eventStartDate.getMinutes()>10){
+            this.starttimeupdate  = "0"+(this.data.editingdata.eventStartDate.getHours()-12) + ':' + this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'pm';
+  
+          }
+          else if((this.data.editingdata.eventStartDate.getHours() - 12)>10 && this.data.editingdata.eventStartDate.getMinutes()<10){
+            this.starttimeupdate  = this.data.editingdata.eventStartDate.getHours()-12 + ':' + "0"+this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'pm';
+  
+          }
+          else{
+                       this.starttimeupdate  = this.data.editingdata.eventStartDate.getHours()-12  + ':' + this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'pm';
+  
+          }
+  
+        }
+        else{
+          if(this.data.editingdata.eventStartDate.getHours()<10 && this.data.editingdata.eventStartDate.getMinutes()<10){
+            this.starttimeupdate  = "0"+this.data.editingdata.eventStartDate.getHours() + ':' + "0"+this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'am';
+  
+          }
+          else if(this.data.editingdata.eventStartDate.getHours()<10 && this.data.editingdata.eventStartDate.getMinutes()>10){
+            this.starttimeupdate  = "0"+this.data.editingdata.eventStartDate.getHours() + ':' + this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'am';
+  
+          }
+          else if(this.data.editingdata.eventStartDate.getHours()>10 && this.data.editingdata.eventStartDate.getMinutes()<10){
+            this.starttimeupdate  = this.data.editingdata.eventStartDate.getHours() + ':' + "0"+this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'am';
+  
+          }
+          else{
+            this.starttimeupdate  = this.data.editingdata.eventStartDate.getHours() + ':' + this.data.editingdata.eventStartDate.getMinutes() + ' ' + 'am';
+  
+          }
+  
+        }
+      }
+      
+
+      if(this.data.editingdata.eventEndDate != null){
+        if(this.data.editingdata.eventEndDate.getHours() > 12 && this.data.editingdata.eventEndDate.getMinutes() >= 1){
+    
+          if((this.data.editingdata.eventEndDate.getHours()-12)<10 && this.data.editingdata.eventEndDate.getMinutes()<10){
+            this.endtimeupdate  = "0"+(this.data.editingdata.eventEndDate.getHours()-12) + ':' + "0"+this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'pm';
+  
+          }
+          else if((this.data.editingdata.eventEndDate.getHours()-12)<10 && this.data.editingdata.eventEndDate.getMinutes()>10){
+            this.endtimeupdate  = "0"+(this.data.editingdata.eventEndDate.getHours()-12) + ':' + this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'pm';
+  
+          }
+          else if((this.data.editingdata.eventEndDate.getHours()-12)>10 && this.data.editingdata.eventEndDate.getMinutes()<10){
+            this.endtimeupdate  = this.data.editingdata.eventEndDate.getHours()-12 + ':' + "0"+this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'pm';
+  
+          }
+          else{
+                       this.endtimeupdate  = this.data.editingdata.eventEndDate.getHours()-12  + ':' + this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'pm';
+  
+          }
+  
+        }
+        else{
+          if(this.data.editingdata.eventEndDate.getHours()<10 && this.data.editingdata.eventEndDate.getMinutes()<10){
+            this.endtimeupdate  = "0"+this.data.editingdata.eventEndDate.getHours() + ':' + "0"+this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'am';
+  
+          }
+          else if(this.data.editingdata.eventStartDate.getHours()<10 && this.data.editingdata.eventStartDate.getMinutes()>10){
+            this.endtimeupdate  = "0"+this.data.editingdata.eventEndDate.getHours() + ':' + this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'am';
+  
+          }
+          else if(this.data.editingdata.eventStartDate.getHours()>10 && this.data.editingdata.eventStartDate.getMinutes()<10){
+            this.endtimeupdate  = this.data.editingdata.eventEndDate.getHours() + ':' + "0"+this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'am';
+  
+          }
+          else{
+            this.endtimeupdate  = this.data.editingdata.eventEndDate.getHours() + ':' + this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'am';
+  
+          }
+  
+        }
+      }
+      
+
+      // if(this.data.editingdata.eventEndDate.getHours() > 12 && this.data.editingdata.eventEndDate.getMinutes() >= 1){
+      //   this.endtimeupdate  = this.data.editingdata.eventEndDate.getHours()-12 + ':' + this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'pm';
+
+      // }
+      // else{
+      //   this.endtimeupdate  = this.data.editingdata.eventEndDate.getHours() + ':' + this.data.editingdata.eventEndDate.getMinutes() + ' ' + 'am';
+
+      // }
+
+      this.form = this.formBuilder.group({
+        categoryId: [this.data.editingdata.categoryId ? this.data.editingdata.categoryId : null, Validators.required],
+        eventStartDate: [this.data.editingdata.eventStartDate ? this.data.editingdata.eventStartDate : null, Validators.required],
+        eventEndDate: [this.data.editingdata.eventEndDate ? this.data.editingdata.eventEndDate : null],
+        eventStartTime : [this.starttimeupdate],
+        eventEndTime : [this.endtimeupdate],
+        // tslint:disable-next-line:max-line-length
+        eventName: [this.data.editingdata.eventName ? this.data.editingdata.eventName : null, [Validators.required, Validators.maxLength(150), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[^0-9]/)]],
+        // tslint:disable-next-line:max-line-length
+        eventDescription: [this.data.editingdata.eventDescription ? this.data.editingdata.eventDescription : null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/\D[^0-9]/)]],
+        updatedBy: [this.businesslogic.employeeId],
+        createdBy: [this.data.editingdata.createdBy],
+        interactionForumsId: [this.data.editingdata.interactionForumsId ? this.data.editingdata.interactionForumsId : null],
+        categoryName: [this.data.editingdata.categoryName ? this.data.editingdata.categoryName : null],
+        colourCode: [this.data.editingdata.colourCode ? this.data.editingdata.colourCode : null],
+        createdByName: [this.data.editingdata.createdByName ? this.data.editingdata.createdByName : null],
+        createdDate: [this.data.editingdata.createdDate ? this.data.editingdata.createdDate : null],
+        enteredTheDiscussion: [this.data.editingdata.enteredTheDiscussion ? this.data.editingdata.enteredTheDiscussion : null],
+        newsAndUpdatesId: [this.data.editingdata.newsAndUpdatesId ? this.data.editingdata.newsAndUpdatesId : null],
+        updatedByName: [this.data.editingdata.updatedByName ? this.data.editingdata.updatedByName : null],
+        updatedDate: [this.data.editingdata.updatedDate ? this.data.editingdata.updatedDate : null]
+      });
+    }
+    if (this.data.editingdata === 2) {
+      this.form.value.categoryId = 9;
+    }
+  }
+
+  postUpdate() {
+    this.form.value.imageData = this.imageobject;
+    const SD = this.form.value.eventStartDate;
+    // let Stime = this.form.value.eventStartTime;
+    if(this.form.value.eventStartTime != null){
+      if(this.form.value.eventStartTime.slice(6) == "pm"){
+        this.Stimehours = Number(this.form.value.eventStartTime.slice(0,2)) + 12;
+      }
+      else{
+        this.Stimehours = Number(this.form.value.eventStartTime.slice(0,2));
+      }
+       
+       this.Stimeminutes = Number(this.form.value.eventStartTime.slice(3,5));
+    }
+  
+    if( this.form.value.eventEndTime != null){
+      if(this.form.value.eventEndTime.slice(6) == "pm"){
+        this.Etimehours = Number(this.form.value.eventEndTime.slice(0,2)) + 12;
+      }
+      else{
+        this.Etimehours = Number(this.form.value.eventEndTime.slice(0,2));
+      }
+      
+       this.Etimeminutes = Number(this.form.value.eventEndTime.slice(3,5));
+    }
+   
+     const ED = this.form.value.eventEndDate;
+    // const Etime = this.form.value.eventEndTime;
+    if (this.form.value.eventStartDate != null) {
+      if(this.form.value.eventStartTime != null){
+        const Stotaldate = new Date(SD.getFullYear(), SD.getMonth(),
+        SD.getDate() , this.Stimehours , this.Stimeminutes
+        );
+       this.form.value.eventStartDate = Stotaldate.getTime();
+      }
+      else{
+  this.form.value.eventStartDate = Date.parse(this.form.value.eventStartDate);
+      }
+    
+    
+    }
+    if (this.form.value.eventEndDate != null) {
+      if(this.form.value.eventEndDate != null){
+        const Etotaldate = new Date(ED.getFullYear(), ED.getMonth(),
+        ED.getDate(), this.Etimehours,this.Etimeminutes
+        );
+       this.form.value.eventEndDate = Etotaldate.getTime();
+      }
+      else{
+ this.form.value.eventEndDate = Date.parse(this.form.value.eventEndDate);
+      }
+     
+     
+    }
+    if (this.data.from === 'news&update') {
+      console.log('called');
+      this.businesslogic.postUpdate('news&updates/postAnUpdate', this.form.value).subscribe((response: any) => {
+        this.dialogRef.close('posted succesfully');
+      });
+    } else {
+      this.businesslogic.postUpdate('interaction_forums/postAnDiscussion', this.form.value).subscribe((response: any) => {
+        this.dialogRef.close('posted succesfully');
+      });
+    }
+
+  }
+
+  // private exportTime = { hour: 7, minute: 15, meriden: 'PM', format: 12 };
+  onNoClick(): void {
+    // tslint:disable-next-line:max-line-length
+    // const dialogRef = this.dialog.open(ConfirmDailogComponent, { width: '30%', data : {warning: 'Are you sure you want to close pop-up?'}});
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   if (result === true) {
+    //     this.dialogRef.close(undefined);
+    //   }
+    // });
+    this.dialogRef.close(undefined);
+  }
+
+  openInput() {
+    // your can use ElementRef for this later
+    document.getElementById('upload').click();
+  }
+
+  onFileChange(evt) {
+    this.count = 0;
+    // this.imageobject = [];
+    const files = evt.target.files;
+    if (files.length + this.imageobject.length > 5) {
+      this.snackBar.open('max of 5 images can be uploaded', '', { duration: 3000, panelClass: ['warningMessage'] });
+      // this.onlyimagewarning = 'Files Selection Limit Exceeds';
+    } else {
+      for (let i = 0; i < files.length; i++) {
+        if (files[i].type.indexOf('image') === -1) {
+          this.snackBar.open('Accepts only images', '', { duration: 3000, panelClass: ['warningMessage'] });
+          // this.onlyimagewarning = 'Accepts Only images';
+          this.count = 1;
+          break;
+        } else if (files[i].size > 1000000) {
+          this.count = 1;
+          // this.onlyimagewarning = null;
+          this.snackBar.open(files[i].name + ' ' + 'exceeds size limit', '', { duration: 3000, panelClass: ['warningMessage'] });
+          // this.sizeexceedsfilename = files[i].name;
+          break;
+        }
+
+      }
+      if (this.count === 0) {
+        // this.onlyimagewarning = null;
+        // this.sizeexceedsfilename = null;
+        if (files) {
+          for (let i = 0; i < files.length; i++) {
+            this.file = files[i];
+            const reader = new FileReader();
+            reader.onload = this._handleReaderLoaded.bind(this, files.length, i, files[i]);
+            reader.readAsBinaryString(this.file);
+          }
+        }
+      }
+    }
+  }
+
+  _handleReaderLoaded(lengthoffiles, ivalue, filevalue, readerEvt) {
+
+    const binaryString = readerEvt.target.result;
+    this.imageobject.push({
+      'imageName': filevalue.name, 'imageType': filevalue.type, 'Image': btoa(binaryString),
+      'updatedBy': 21375, 'createdBy': 21375
+    });
+    if (ivalue + 1 === lengthoffiles) {
+      this.addimage();
+    }
+  }
+
+  addimage() {
+    this.form.value.imageData = this.imageobject;
+  }
+
+  remove(image): void {
+    const index = this.imageobject.indexOf(image);
+    if (index >= 0) {
+      this.imageobject.splice(index, 1);
+      this.form.value.imageData = this.imageobject;
+    }
+  }
+}

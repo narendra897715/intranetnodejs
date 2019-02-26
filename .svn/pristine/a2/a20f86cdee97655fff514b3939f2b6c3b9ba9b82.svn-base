@@ -1,0 +1,64 @@
+
+
+ exports.sendBirthdayWishes = (data) => {
+
+    var template = "<html><body><label style='font-family : Calibri; font-size:10px;'>Hi " + data.employeeName + ","
+        + "<br/><br/>Wish you a very happy birthday. Have a great year ahead."
+
+        + "<br/><br/>Regards" + "<br/>Merilytics.</label></body></html>"
+        + "<label style='font-family : Arial; font-size:10px;'><font color='#585858'><br/><br/>The information contained in this e-mail is confidential "
+        + "and proprietary to Merilytics Inc. and/or its affiliates."
+        + "The information transmitted herewith is intended only for use by the individual or entity to which it is addressed."
+        + " If the reader of this message is not the intended recipient, you are hereby notified that any review, retransmission, "
+        + "dissemination, distribution, copying or other use of, or taking of any action in reliance upon this information is strictly prohibited."
+        + "If you have received this communication in error, please contact the sender and delete the material from your computer.</font></label></body></html>";
+    return template;
+
+
+}
+
+exports.sendWorkAnniversaryWishes = (data) => {
+    var years = data.yearsOfExperience > 1 ? 'years' : 'year'
+    var template = "<html><body><label style='font-family : Calibri; font-size:10px;'>Hi " + data.employeeName + ","
+        + "<br/><br/>Congratulations for completing " + data.yearsOfExperience + " "+years+" with Merilytics."
+
+        + "<br/><br/>Regards" + "<br/>Merilytics.</label></body></html>"
+        + "<label style='font-family : Arial; font-size:10px;'><font color='#585858'><br/><br/>The information contained in this e-mail is confidential "
+        + "and proprietary to Merilytics Inc. and/or its affiliates."
+        + "The information transmitted herewith is intended only for use by the individual or entity to which it is addressed."
+        + " If the reader of this message is not the intended recipient, you are hereby notified that any review, retransmission, "
+        + "dissemination, distribution, copying or other use of, or taking of any action in reliance upon this information is strictly prohibited."
+        + "If you have received this communication in error, please contact the sender and delete the material from your computer.</font></label></body></html>";
+    return template;
+}
+
+ exports.emailToOrgForPostUpdate = (employeeName,eventName)=>{
+    return `<html><body><label style='font-family : Calibri; font-size:10px;'>Hi All,
+   <br/><br/> A new company update has been posted on the Intranet portal. 
+   <br/><br/>Post Subject: ${eventName }.
+   <br/>Post Link: <a href='http://172.16.10.51:1233/#/intranet/newsupdates/recentlyposted'>Click here</a>
+
+    <br/><br/>Regards <br/>Merilytics.</label></body></html>
+    <label style='font-family : Arial; font-size:10px;'><font color='#585858'><br/><br/>The information contained in this e-mail is confidential 
+    and proprietary to Merilytics Inc. and/or its affiliates.
+    The information transmitted herewith is intended only for use by the individual or entity to which it is addressed.
+     If the reader of this message is not the intended recipient, you are hereby notified that any review, retransmission, 
+    dissemination, distribution, copying or other use of, or taking of any action in reliance upon this information is strictly prohibited.
+    If you have received this communication in error, please contact the sender and delete the material from your computer.</font></label></body></html>`
+}
+
+exports.emailForAppreciation = (employeeName,message)=>{
+    return `<html><body><label style='font-family : Calibri; font-size:10px;'>Hi ${employeeName},
+   <br/><br/> You have been appreciated by your colleague on the Intranet Portal, please <a href='http://172.16.10.51:1233/#/intranet/newsupdates/recentlyposted'>login</a> to the portal to know more in detail. 
+
+
+    <br/><br/>Regards <br/>Merilytics.</label></body></html>
+    <label style='font-family : Arial; font-size:10px;'><font color='#585858'><br/><br/>The information contained in this e-mail is confidential 
+    and proprietary to Merilytics Inc. and/or its affiliates.
+    The information transmitted herewith is intended only for use by the individual or entity to which it is addressed.
+     If the reader of this message is not the intended recipient, you are hereby notified that any review, retransmission, 
+    dissemination, distribution, copying or other use of, or taking of any action in reliance upon this information is strictly prohibited.
+    If you have received this communication in error, please contact the sender and delete the material from your computer.</font></label></body></html>`
+}
+
+//module.exports = { sendBirthdayWishes, sendWorkAnniversaryWishes ,emailToOrgForPostUpdate}

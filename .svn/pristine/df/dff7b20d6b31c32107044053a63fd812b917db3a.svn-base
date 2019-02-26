@@ -1,0 +1,248 @@
+<div fxFlex fxLayout="column" style="background-color: white;border-radius:5px;" *ngIf="completeObjectData.categoryId != 7">
+  <div fxLayout="column" style="margin:1%;">
+    <div fxFlex="7" fxlayout="row" style="margin-bottom:1%;">
+      <img [src]="'assets/Intranet-Icons/backarrow.svg'" style="width:15px; height:15px; cursor: pointer" (click)="gotoforum()"> &nbsp;&nbsp;
+      <span style="color:#363084; cursor: pointer" (click)="gotoforum()">Interaction forums</span>
+    </div>
+
+    <div fxFlex="8" style="margin-bottom:1%;">
+      <span class="eventname-class">{{completeObjectData.eventName}}</span> &nbsp;&nbsp;&nbsp;
+      <span (click)="editevent(completeObjectData)"  style="color: #95af28">
+        <i class="fa fa-pencil" aria-hidden="true">Edit</i>
+      </span>
+    </div>
+
+    <div fxFlex="8" style="margin-bottom:1%">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <span>by&nbsp;
+          <b style="color: #363084">{{completeObjectData.updatedByName}}</b> &nbsp;&nbsp; Created On &nbsp;&nbsp;
+          <img [src]="'assets/Intranet-Icons/clock.svg'" style="height:15px;"> &nbsp;&nbsp;{{completeObjectData.updatedDate | date}}
+        </span>
+
+        <div fxLayout="row" >
+            <div *ngFor="let cld of completeObjectData.CLDData" fxLayout="row">
+                <span fxLayoutAlign="center center">
+                <img [src]="'assets/Intranet-Icons/comment.svg'" height="20" style="margin:0 5px 0 5px">{{cld.commentsCount}}</span>
+                <span fxLayoutAlign="center center">
+                    <img [src]="'assets/Intranet-Icons/like.svg'" *ngIf="cld.liked == null || cld.liked == false" (click)="likedTheEvent(completeObjectData.interactionForumsId,cld,true)" height="20" style="margin:0 5px 0 5px">
+                    <img [src]="'assets/Intranet-Icons/like-filled.svg'" *ngIf="cld.liked == true" height="20" style="margin:0 5px 0 5px">{{cld.likesCount}}</span>
+                  <span fxLayoutAlign="center center">
+                    <img [src]="'assets/Intranet-Icons/dislike.svg'" *ngIf="cld.liked == null || cld.liked == true" (click)="likedTheEvent(completeObjectData.interactionForumsId,cld,false)" height="20" style="margin:0 5px 0 5px">
+                  <img [src]="'assets/Intranet-Icons/dislike-filled.svg'" *ngIf="cld.liked == false" height="20" style="margin:0 5px 0 5px">{{cld.dislikesCount}}
+                  </span>
+            </div> 
+        </div>
+         
+        <!-- 
+            <span *ngIf="idata.categoryname === 'polling'" style="margin-right:10px;">
+              yes {{idata.noOfYes}} No {{noOfNo}}
+            </span> -->
+      </div>
+
+    </div>
+
+  
+        <div fxLayout="row wrap">
+            <div *ngIf="completeObjectData.imageData.length == 0">
+              <img style="height:70px" [src]="'assets/Intranet-Icons/picture.svg'">
+            </div>
+            <div *ngIf="completeObjectData.imageData.length != 0" fxLayout="row">
+              <div *ngFor="let i of completeObjectData.imageData; index as l" style="margin:10px">
+                <div fxLayout="column" fxLayoutAlign="end end" class="image-click-view">
+      
+                  <i class="fa fa-times-circle-o" aria-hidden="true" (click)="deleteimage(completeObjectData.interactionForumsId,i.imageId)"></i>
+      
+                  <img style="height:60px" [src]="'data:image/jpg;base64,' + i.image" (click)="zoominimage(l)">
+                  <span (click)="zoominimage(l)">Click to view full screen</span>
+                </div>
+      
+              </div>
+            </div>
+      
+            <div fxLayoutAlign="center center">
+              <input id="upload" type="file" style="display:none" (change)="onFileChange($event,completeObjectData.interactionForumsId)" multiple
+                name="imageupload">
+              <img [src]="'assets/Intranet-Icons/add_circle.svg'" style="width:30px; height:30px; color: #363084; padding: 10px;" (click)="openInput()">
+            </div>
+          </div> 
+    <div style="margin:8px; overflow:auto" fxFlex="77">
+      <!-- <perfect-scrollbar> -->
+      {{completeObjectData.eventDescription}}
+      <!-- </perfect-scrollbar> -->
+    </div>
+  </div>
+
+  <!-- Comments code -->
+
+  <div style="margin:1%">
+    <!-- <perfect-scrollbar> -->
+    <div class="listing-comments">
+      
+      <div *ngFor="let comment of completeObjectData.commentsData">
+        <div fxFlex class="comment-box" fxLayout="row" fxLayoutAlign="space-around center">
+          <img fxFlex="5" [src]="'assets/Intranet-Icons/user.svg'" class="profile-img">
+          <div fxFlex="95" fxLayout="column">
+            <span>
+              <span class="name-text">{{comment.commentedByName}}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+              <img [src]="'assets/Intranet-Icons/clock.svg'" style="height:15px;"> &nbsp;&nbsp;{{comment.createdDate | date}}
+            </span>
+            <span class="comment-content">{{comment.commentContent}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form name="form">
+      <div fxLayoutAlign="space-around center">
+        <img fxFlex="5" [src]="'assets/Intranet-Icons/user.svg'" class="profile-img">
+        <textarea fxFlex="85" placeholder="Comment" name="comment" style="height:50px; margin-top: 2%" [(ngModel)]="newComment.content"></textarea>
+        <button fxFlex="12" mat-raised-button type="submit" class="add-comment" (click)="addNewComment()">Add comment</button>
+      </div>
+    </form>
+    <!-- </perfect-scrollbar> -->
+  </div>
+
+</div>
+
+<div fxFlex fxLayout="column" style="background-color: white;border-radius:5px;" *ngIf="completeObjectData.categoryId == 7">
+  <div fxFlex fxLayout="column" style="margin:1%;">
+    <div fxFlex="5" fxlayout="row">
+      <img [src]="'assets/Intranet-Icons/backarrow.svg'" style="width:15px; height:15px; cursor: pointer" (click)="gotoforum()"> &nbsp;&nbsp;
+      <span style="color:#363084; cursor: pointer" (click)="gotoforum()">Interaction forums</span>
+    </div>
+
+    <div fxFlex="5" fxLayout="row" fxLayoutAlign="space-between center">
+      <span>Polling</span>
+      <span fxLayout="row">
+        <img [src]="'assets/Intranet-Icons/user.svg'" class="user-img">
+        <span fxLayout="column" fxLayoutGap="10px" style="padding:10px; color:#363084;">by {{completeObjectData.createdByName}}
+          <!-- <span>{{pollingData.designation}}</span> -->
+        </span>
+
+      </span>
+    </div>
+
+    <div fxFlex="5" style="margin-bottom:1%;">
+      <div fxLayout="column">
+        <span class="eventname-class">{{completeObjectData.eventName}} &nbsp;&nbsp;&nbsp;
+          <span (click)="editevent(idata)" style="color: #95af28">
+            <i class="fa fa-pencil" aria-hidden="true">Edit</i> &nbsp;&nbsp;
+            <img [src]="'assets/Intranet-Icons/clock.svg'" style="height:15px;"> &nbsp;&nbsp;{{completeObjectData.eventStartDate | date}}
+          </span>
+          <span>
+          </span>
+        </span>
+        <span>
+          <span style="color:#363084;">by {{completeObjectData.createdByName}}
+          </span>, &nbsp;
+          <span>Poll Ends On {{completeObjectData.eventEndDate | date}}</span>
+        </span>
+      </div>
+    </div>
+
+    <div fxFlex="10" fxLayoutAlign="space-between center">
+      <span style="color:#363084;" (click)="showDetails()">View Polls/Votes</span>
+      <span fxLayoutAlign="center center" fxLayoutAlign.xs="start start" fxLayout="row">
+        <round-progress [current]="120" [max]="200" [radius]="12" [color]="'#00b6f8'" [background]="'#375a64'" [stroke]="5"></round-progress> &nbsp; &nbsp;120 Votes
+      </span>
+    </div>
+
+    <!-- <div fxFlex="8" *ngIf="pollingData.imageData == ''"> -->
+    <!-- <div fxLayout="row wrap">
+            <img style="height:65px" [src]="'assets/Intranet-Icons/picture.svg'">
+          </div> -->
+    <!-- <div *ngIf="pollingData.imageData.image != '-'">
+            <div *ngFor="let i of pollingData.imageData;index as l" style="margin:10px">
+              <div fxLayout="column" style="border:1px solid #95af28" fxLayoutAlign="end end">
+    
+                <i class="fa fa-times-circle-o" aria-hidden="true" (click)="deleteimage(pollingData.newsAndUpdatesId,i.imageId)"></i>
+    
+                <img style="height:60px" [src]="'data:image/jpg;base64,' + i.image" (click)="zoominimage(l)">
+              </div>
+    
+            </div>
+          </div> -->
+    <!-- </div>  -->
+
+    <div fxFlex="75" fxLayout="column" *ngIf="!tableView">
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <div fxFlex="52" fxFlex.xs="30" style="cursor:pointer; height:150px; width: 150px;">
+          <img [src]="'assets/Intranet-Icons/polling.svg'">
+        </div>
+        <div fxFlex="48">
+          <mat-radio-group class="example-radio-group" >
+            <mat-radio-button class="example-radio-button" [checked]="i.OptionOpted === true" *ngFor="let i of completeObjectData.pollingData" [value]="i">
+              {{i.optionDescription}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <!-- <div fxFlex="20"></div> -->
+      <!-- <div fxFlex="50">
+            <span fxlayout="row" fxLayoutGap="10px" style="display: inline-flex">
+              <span class="dot" style="background-color: #17a53e;"></span> &nbsp;&nbsp;
+              <span>Yes</span>
+            </span>
+          </div>
+          <div fxFlex="50" fxLayout="column">
+            <span fxlayout="row" fxLayoutGap="10px" style="display: inline-flex">
+              <span class="dot" style="background-color: #f53308;"></span> &nbsp;&nbsp;
+              <span>No</span>
+            </span>
+          </div> -->
+    </div>
+
+    <div fxFlex="75" fxLayout="column" *ngIf="tableView">
+      <div class="mat-elevation-z8">
+
+        <div fxlayout="row" fxLayoutGap="10px" class="example-header" style="min-height: 56px !important">
+          <mat-form-field fxFlex="20" style="padding: 0 6px">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+          </mat-form-field>
+          <div fxflex="10"></div>
+          <mat-form-field fxFlex="20" style="padding: 0 6px">
+            <mat-select placeholder="Voting option" (selectionChange)="votingSelectionChanged()">
+              <mat-option *ngFor="let i of completeObjectData.pollingData" [value]="i.optionId">
+                {{i.optionDescription}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="designation">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Designation </th>
+            <td mat-cell *matCellDef="let element"> {{element.employeeDesignation}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Voted time </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdDate | date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Work Location </th>
+            <td mat-cell *matCellDef="let element"> {{element.workLocation}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="pollresponse">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Response </th>
+            <td mat-cell *matCellDef="let element"> {{element.optionDescription}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color: #d9d9d9"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,791 @@
+const { sql, poolPromise } = require('./../utils/db/connpool');
+var { log4js } = require('./../utils/log-conf/logger');
+var logger = log4js.getLogger('database');
+
+exports.getInteractionForumsTrending = (searchData, categoryId, rowStart, rowEnd) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('searchData', sql.NVarChar, searchData)
+            .input('categoryId', sql.Numeric, categoryId)
+            .input('rowStart', sql.Numeric, rowStart)
+            .input('rowEnd', sql.Numeric, rowEnd)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsTrending]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.getCommentsAndLikesCount = (interactionForumsId, logInId) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('ifID', sql.NVarChar, interactionForumsId)
+            .input('empId', sql.NVarChar, logInId)
+            .execute('[dbo].[IntranetPortal_sp_getCLDCount]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                //console.log(result.recordsets[0]);
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.getCommentsPollingInfo = (interactionForumsId, logInId) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('interactionForumsId', sql.NVarChar, interactionForumsId)
+            .input('logInId', sql.NVarChar, logInId)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsPolling]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                //console.log(result.recordsets[0]);
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.getInteractionForumsComments = (interactionForumsId) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('interactionForumsId', sql.NVarChar, interactionForumsId)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsCommentsById]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                //console.log(result.recordsets[0]);
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.getPollingEmployeeInfo = (data) => {
+
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('interactionForumsId', sql.Numeric, data.interactionForumsId)
+            .input('optionId', sql.Numeric, data.optionId)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsEmployeePollingInfo]', (err, result) => {
+                if (err) {
+                    //console.log(err);
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                //console.log(result.recordsets[0]);
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.getCategoryDropDown = () => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise).execute('IntranetPortal_sp_getInteractionForumsCategoryList', (err, result) => {
+            if (err) {
+                logger.fatal(err);
+                reject(err);
+            }
+
+            resolve(result.recordsets[0]);
+
+        })
+    })
+};
+
+exports.getSubMenu = () => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise).execute('IntranetPortal_sp_getInteractionForumsSubMenu', (err, result) => {
+            if (err) {
+                logger.fatal(err);
+                reject(err);
+            }
+
+            resolve(result.recordsets[0]);
+
+        })
+    })
+};
+exports.getCategoryDropDownSelection = () => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise).execute('IntranetPortal_sp_getInteractionForumsCategoryListSelection', (err, result) => {
+            if (err) {
+                logger.fatal(err);
+                reject(err);
+            }
+
+            resolve(result.recordsets[0]);
+
+        })
+    })
+};
+exports.getInteractionForumsNewlyAdded = (searchData, categoryId,filterId, rowStart, rowEnd) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('searchData', sql.NVarChar, searchData)
+            .input('categoryId', sql.Numeric, categoryId)
+            .input('filterId', sql.Numeric, filterId)
+            .input('rowStart', sql.Numeric, rowStart)
+            .input('rowEnd', sql.Numeric, rowEnd)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsNewlyAdded]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+
+exports.getInteractionForumsMostCommentedAdded = (searchData, categoryId, rowStart, rowEnd) => {
+
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('searchData', sql.NVarChar, searchData)
+            .input('categoryId', sql.Numeric, categoryId)
+            .input('rowStart', sql.Numeric, rowStart)
+            .input('rowEnd', sql.Numeric, rowEnd)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsMostCommented]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.getInteractionForumsDataById = (interactionForumsId, newsAndUpdatesId) => {
+    //console.log(interactionForumsId);
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('interactionForumsId', sql.Numeric, interactionForumsId)
+            .input('newsAndUpdatesId', sql.Numeric, newsAndUpdatesId)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsById]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+
+exports.startDiscussion = (data) => {
+    //null check and insert if id is null else update
+
+    return new Promise((resolve, reject) => {
+        const transaction = poolPromise.transaction();
+        transaction.begin(err => {
+            // ... error checks
+
+            let rolledBack = false
+
+            transaction.on('rollback', aborted => {
+                // emited with aborted === true
+
+                rolledBack = true
+            })
+
+            const request = new sql.Request(transaction)
+                .input('newsAndUpdatesId', sql.Int, data.newsAndUpdatesId)
+                .input('categoryId', sql.Int, data.categoryId)
+                .input('eventStartDate', sql.DateTime, data.eventStartDate)
+                .input('eventEndDate', sql.DateTime, data.eventEndDate)
+                .input('eventName', sql.NVarChar, data.eventName)
+                .input('eventDescription', sql.NVarChar, data.eventDescription)
+                .input('updatedBy', sql.Int, data.updatedBy)
+                .input('createdDate', sql.DateTime, data.createdDate)
+                .input('updatedDate', sql.DateTime, data.updatedDate)
+                .input('createdBy', sql.Int, data.createdBy)
+                .query('insert into tbl_interaction_forums (newsAndUpdatesId,categoryId,eventStartDate,eventEndDate,eventName,eventDescription,createdBy,updatedBy,createdDate,updatedDate)' +
+                    ' values (@newsAndUpdatesId,@categoryId,@eventStartDate,@eventEndDate,@eventName,@eventDescription,@createdBy,@updatedBy,@createdDate,@updatedDate);SELECT SCOPE_IDENTITY() AS id;', (err, result) => {
+
+                        if (err) {
+                            reject(err);
+                            // console.log(err);
+                        }
+
+                        if (err) {
+                            if (!rolledBack) {
+                                transaction.rollback(err => {
+                                    // ... error checks
+                                    logger.fatal(err);
+                                    reject(err);
+
+                                })
+                            }
+                        } else {
+                            transaction.commit(err => {
+                                // ... error checks
+                                resolve(result);
+                            });
+                        };
+                    });
+        });
+    });
+};
+
+exports.updateTheDiscussion = (data) => {
+    //null check and insert if id is null else update
+    return new Promise((resolve, reject) => {
+        try {
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true;
+                })
+
+                const ps = new sql.PreparedStatement(transaction)
+                ps.input('interactionForumsId', sql.Int)
+                ps.input('categoryId', sql.Int)
+                ps.input('eventStartDate', sql.DateTime)
+                ps.input('eventEndDate', sql.DateTime)
+                ps.input('eventName', sql.NVarChar)
+                ps.input('eventDescription', sql.NVarChar)
+                ps.input('updatedBy', sql.Int)
+                ps.input('createdDate', sql.DateTime)
+                ps.input('updatedDate', sql.DateTime)
+                ps.input('createdBy', sql.Int)
+                ps.prepare('update  tbl_interaction_forums set categoryId=@categoryId,eventStartDate=@eventStartDate,eventEndDate=@eventEndDate,eventName=@eventName,eventDescription=@eventDescription,updatedBy=@updatedBy,updatedDate=@updatedDate where interactionForumsId =@interactionForumsId', err => {
+
+
+                    const request = ps.execute(data, (err, result) => {
+
+                        if (err) {
+                            reject(err);
+                            // console.log(err);
+                        }
+                        ps.unprepare(err => {
+                            // ... error checks
+                            if (err) {
+                                if (!rolledBack) {
+                                    transaction.rollback(err => {
+                                        // ... error checks
+                                        logger.fatal(err);
+                                        reject(err);
+                                    })
+                                }
+                            } else {
+                                transaction.commit(err => {
+
+                                    // ... error checks
+                                    resolve(undefined, result);
+
+
+
+
+
+                                })
+                            }
+
+                        })
+                    })
+
+
+                })
+            })
+
+        } catch (error) {
+            logger.fatal(err);
+            throw error;
+
+
+        }
+    });
+}
+
+
+exports.uploadImages = (imageData) => {
+    //console.log('i am checkin g here',pk);
+    //console.log('data', imageData);
+    return new Promise((resolve, reject) => {
+        try {
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true
+                })
+
+                const ps = new sql.PreparedStatement(transaction)
+
+                ps.input('imageType', sql.NVarChar)
+                ps.input('imageName', sql.NVarChar)
+                ps.input('interactionForumsId', sql.Int)
+                ps.input('newsAndUpdatesId', sql.Int)
+                ps.input('Image', sql.NVarChar)
+                ps.input('updatedBy', sql.Int)
+                ps.input('createdDate', sql.DateTime)
+                ps.input('updatedDate', sql.DateTime)
+                ps.input('createdBy', sql.Int)
+                ps.prepare('insert into tbl_images (imageType,imageName,interactionForumsId,newsAndUpdatesId,Image,createdBy,updatedBy,createdDate,updatedDate)' +
+                    ' values (@imageType,@imageName,@interactionForumsId,@newsAndUpdatesId,@Image,@createdBy,@updatedBy,@createdDate,@updatedDate);SELECT SCOPE_IDENTITY() AS id;', err => {
+                        // insert should fail because of invalid value
+                        const request = ps.execute(imageData, (err, result) => {
+                            if (err) {
+                                logger.fatal(err);
+                                reject(err);
+                                // console.log(err);
+                            }
+
+                            ps.unprepare(err => {
+                                // ... error checks
+                                if (err) {
+                                    if (!rolledBack) {
+                                        transaction.rollback(err => {
+                                            // ... error checks
+                                            logger.fatal(err);
+                                            reject(err);
+
+                                        })
+                                    }
+                                } else {
+                                    transaction.commit(err => {
+
+                                        // ... error checks
+                                        resolve(result);
+
+
+
+
+                                    })
+                                }
+
+                            })
+                        })
+
+
+                    })
+            })
+
+        } catch (error) {
+           // console.log(error);
+            logger.fatal(err);
+
+            throw error;
+        }
+    });
+};
+
+
+exports.savePollingOptions = (data) => {
+    return new Promise((resolve, reject) => {
+        try {
+
+
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true
+                })
+
+                const request = new sql.Request(transaction)
+                    .input('interactionForumsId', sql.Int, data.interactionForumsId)
+                    .input('optionDescription', sql.NVarChar, data.optionDescription)
+                    .input('updatedBy', sql.Int, data.updatedBy)
+                    .input('createdDate', sql.DateTime, data.createdDate)
+                    .input('updatedDate', sql.DateTime, data.updatedDate)
+                    .input('createdBy', sql.Int, data.createdBy)
+                    .query('insert into tbl_polling_options (interactionForumsId,optionDescription,createdBy,updatedBy,createdDate,updatedDate)' +
+                        ' values (@interactionForumsId,@optionDescription,@createdBy,@updatedBy,@createdDate,@updatedDate);SELECT SCOPE_IDENTITY() AS id;', (err, result) => {
+                            if (err) {
+                                reject(err);
+                                // console.log(err);
+                            }
+
+
+                            if (err) {
+                                if (!rolledBack) {
+                                    transaction.rollback(err => {
+                                        // ... error checks
+                                       // console.log(err);
+                                        logger.fatal(err);
+                                        reject(err);
+
+                                    })
+                                }
+                            } else {
+                                transaction.commit(err => {
+                                    // ... error checks
+                                   // console.log('saving');
+                                    resolve(result);
+                                });
+                            };
+                        });
+            });
+        } catch (error) {
+           // console.log(error);
+        }
+    });
+};
+
+exports.updatePollingOptions = (data) => {
+    try {
+        return new Promise((resolve, reject) => {
+
+
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true
+                })
+
+                const request = new sql.Request(transaction)
+                    .input('interactionForumsId', sql.Int, data.interactionForumsId)
+                    .input('optionDescription', sql.NVarChar, data.optionDescription)
+                    .input('updatedBy', sql.Int, data.updatedBy)
+                    .input('createdDate', sql.DateTime, data.createdDate)
+                    .input('updatedDate', sql.DateTime, data.updatedDate)
+                    .input('createdBy', sql.Int, data.createdBy)
+                    .query('update tbl_polling_options set optionDescription=@optionDescription,updatedBy=@updatedBy,updatedDate=@updatedDate where interactionForumsId=@interactionForumsId', (err, result) => {
+                        if (err) {
+                            reject(err);
+                            // console.log(err);
+                        }
+
+
+                        if (err) {
+                            if (!rolledBack) {
+                                transaction.rollback(err => {
+                                    // ... error checks
+                                   // console.log('error check');
+                                    logger.fatal(err);
+                                    // reject(err);
+
+                                })
+                            }
+                        } else {
+                            transaction.commit(err => {
+                                // ... error checks
+                               // console.log('saving');
+                                resolve(result);
+                            });
+                        };
+                    });
+            });
+
+        });
+    } catch (error) {
+        logger.fatal(error);
+        //console.log('in catch block')
+        //console.log(error);
+    }
+};
+
+
+exports.savePollingChoice = (data) => {
+    return new Promise((resolve, reject) => {
+        try {
+
+
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true
+                })
+
+                const request = new sql.Request(transaction)
+                    .input('optionId', sql.Int, data.optionId)
+                    .input('optedBy', sql.NVarChar, data.optedBy)
+                    .input('updatedBy', sql.Int, data.updatedBy)
+                    .input('createdDate', sql.DateTime, data.createdDate)
+                    .input('updatedDate', sql.DateTime, data.updatedDate)
+                    .input('createdBy', sql.Int, data.createdBy)
+                    .query('insert into tbl_polling_option_opted (optionId,optedBy,createdBy,updatedBy,createdDate,updatedDate)' +
+                        ' values (@optionId,@optedBy,@createdBy,@updatedBy,@createdDate,@updatedDate);SELECT SCOPE_IDENTITY() AS id;', (err, result) => {
+                            if (err) {
+                                reject(err);
+                                // console.log(err);
+                            }
+
+
+                            if (err) {
+                                if (!rolledBack) {
+                                    transaction.rollback(err => {
+                                        // ... error checks
+                                       // console.log(err);
+                                        logger.fatal(err);
+                                        reject(err);
+
+                                    })
+                                }
+                            } else {
+                                transaction.commit(err => {
+                                    // ... error checks
+                                    console.log('saving');
+                                    resolve(result);
+                                });
+                            };
+                        });
+            });
+        } catch (error) {
+            logger.fatal(error);
+            //console.log(error);
+        }
+    });
+};
+exports.updatePollingChoice = (data) => {
+    try {
+        return new Promise((resolve, reject) => {
+
+
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true
+                })
+
+                const request = new sql.Request(transaction)
+                    .input('optionOptedId', sql.Int, data.optionOptedId)
+                    .input('optionId', sql.NVarChar, data.optionId)
+                    .input('updatedBy', sql.Int, data.updatedBy)
+                    .input('createdDate', sql.DateTime, data.createdDate)
+                    .input('updatedDate', sql.DateTime, data.updatedDate)
+                    .input('createdBy', sql.Int, data.createdBy)
+                    .query('update tbl_polling_option_opted set optionId=@optionId,updatedBy=@updatedBy,updatedDate=@updatedDate where optionOptedId=@optionOptedId', (err, result) => {
+                        if (err) {
+                            reject(err);
+                            // console.log(err);
+                        }
+
+
+                        if (err) {
+                            if (!rolledBack) {
+                                transaction.rollback(err => {
+                                    // ... error checks
+                                    //console.log('error check');
+                                    logger.fatal(err);
+                                    // reject(err);
+
+                                })
+                            }
+                        } else {
+                            transaction.commit(err => {
+                                // ... error checks
+                               // console.log('saving');
+                                resolve(result);
+                            });
+                        };
+                    });
+            });
+
+        });
+    } catch (error) {
+        logger.fatal(error);
+       // console.log('in catch block')
+       // console.log(error);
+    }
+};
+
+
+exports.likeOrDislike = (data) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise)
+            .input('interactionForumsId', sql.Numeric, data.interactionForumsId)
+            .input('employeeId', sql.Numeric, data.employeeId)
+            .input('liked', sql.Bit, data.liked)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsEmployeeLD]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                //console.log(result.recordsets[0]);
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+exports.comments = (data) => {
+    return new Promise((resolve, reject) => {
+        const transaction = poolPromise.transaction();
+        transaction.begin(err => {
+            // ... error checks
+
+            let rolledBack = false
+
+            transaction.on('rollback', aborted => {
+                // emited with aborted === true
+
+                rolledBack = true
+            })
+
+            const request = new sql.Request(transaction)
+                .input('interactionForumsId', sql.Int, data.interactionForumsId)
+                .input('commentContent', sql.NVarChar, data.commentContent)
+                .input('commentedBy', sql.Int, data.employeeId)
+
+                .input('likedBy', sql.Int, null)
+                .input('disLikedBy', sql.Int, null)
+                .input('createdBy', sql.Int, data.createdBy)
+                .input('updatedBy', sql.Int, data.updatedBy)
+                .input('createdDate', sql.DateTime, data.createdDate)
+                .input('updatedDate', sql.DateTime, data.updatedDate)
+
+                .query('insert into tbl_iforum_CLD  (interactionForumsId,commentContent,commentedBy,likedBy,dislikedBy,createdBy,updatedBy,createdDate,updatedDate)' +
+                    ' values (@interactionForumsId,@commentContent,@commentedBy,@likedBy,@disLikedBy,@createdBy,@updatedBy,@createdDate,@updatedDate);SELECT SCOPE_IDENTITY() AS id;', (err, result) => {
+
+
+                        if (err) {
+                            logger.fatal(err);
+                            reject(err);
+
+                        }
+                        if (err) {
+                            if (!rolledBack) {
+                                transaction.rollback(err => {
+                                    // ... error checks
+                                    logger.fatal(err);
+                                    reject(err);
+
+                                })
+                            }
+                        } else {
+                            transaction.commit(err => {
+                                // ... error checks
+                               // console.log(result);
+                                resolve(result);
+                            });
+                        };
+                    });
+        });
+
+    })
+
+};
+
+
+exports.deleteOption = (data) => {
+    return new Promise((resolve, reject) => {
+        try {
+            const transaction = poolPromise.transaction();
+            transaction.begin(err => {
+                // ... error checks
+
+                let rolledBack = false
+
+                transaction.on('rollback', aborted => {
+                    // emited with aborted === true
+
+                    rolledBack = true
+                })
+
+                const ps = new sql.PreparedStatement(transaction)
+
+                ps.input('optionId', sql.Int)
+                ps.prepare('delete from  tbl_polling_options where optionId= @optionId', err => {
+                    // insert should fail because of invalid value
+                    const request = ps.execute(data, (err, result) => {
+                        if (err) {
+                            logger.fatal(err);
+                            reject(err);
+
+                        }
+
+                        ps.unprepare(err => {
+                            // ... error checks
+                            if (err) {
+                                if (!rolledBack) {
+                                    transaction.rollback(err => {
+                                        // ... error checks
+                                        logger.fatal(err);
+                                        reject(err);
+
+                                    })
+                                }
+                            } else {
+                                transaction.commit(err => {
+
+                                    // ... error checks
+                                    resolve(result);
+                                })
+                            }
+
+                        })
+                    })
+
+
+                })
+            })
+
+        } catch (error) {
+            logger.fatal(err);
+            throw new Error('error occured while performing database trasaction');
+        }
+
+    })
+}
+
+exports.pollingExcelDownload = (interactionForumsId) => {
+    return new Promise((resolve, reject) => {
+        new sql.Request(poolPromise).input('interactionForumsId', sql.Int, interactionForumsId)
+            .execute('[dbo].[IntranetPortal_sp_getInteractionForumsEmployeePollingDetails]', (err, result) => {
+                if (err) {
+                    logger.fatal(err);
+                    reject(err);
+                }
+                // poolPromise.close();
+                resolve(result.recordsets[0]);
+
+            })
+    })
+};
+

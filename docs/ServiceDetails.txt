@@ -1,0 +1,86 @@
+sample service: http://localhost:3000/news&updates/getCategoryList 
+
+------------------------News&Updates---------------------------------
+
+news&updates/getSubMenu  -----GET
+news&updates/getCategoryList--- GET
+news&updates/postAnUpdate   -- POST
+news&updates/eventsInfo--- POST
+news&updates/industryNews--- GET
+news&updates/recentlyPostedDetails--- POST
+{"search":"on boarding for new recruits",
+	"filterId":1,
+	"pageNo":1,
+	"pageSize":10
+}
+news&updates/eventDetails--- POST
+news&updates/managementCommunicationsDetails--- POST
+news&updates/awardsDetails--- POST
+news&updates/newJoineeDetails--- POST
+news&updates/newsAndUpdatesFilter--- GET
+news&updates/sendWishes--- POST
+news&updates/deleteImage----POST
+news&updates/calendarDetails--- GET
+news&updates/uploadImageToExistingPost--- POST
+{
+"newsAndUpdatesId":91,
+"imageType":"type",
+"imageName": "sameer",
+
+"Image":"s;test data",
+
+"updatedBy":21258,
+
+"createdBy":21258
+
+}
+
+
+
+
+news&updates/recentlyPostedDetailsByID--- POST
+{"newsAndUpdatesId":6}
+
+
+
+
+
+
+{
+"categoryId": 1,
+"eventStartDate":"2018/08/03 16:12:14",
+"eventEndDate":"2018/08/03 16:12:14",
+"eventName":"test event",
+"eventDescription":"bla bla",
+"updatedBy":21258,
+
+"createdBy":21258,
+"imageData":[{
+"imageType":"type",
+"imageName": "my new image",
+
+"Image":"s;test data",
+
+"updatedBy":21258,
+
+"createdBy":21258
+
+},
+{
+"imageType":"test",
+"imageName": "test image",
+
+"Image":"s;test data",
+
+"updatedBy":21258,
+
+"createdBy":21258	
+}]
+}
+
+---------------------------------employee------------------------------------
+sample::: http://localhost:3000/employee/getEmployeeDetailsById
+
+employee/getEmployeeDetails -- GET
+employee/getEmployeeDetailsById--POST
+{"employeeId":21258}

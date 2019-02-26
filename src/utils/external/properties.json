@@ -1,0 +1,12 @@
+{
+    "techNews": {
+        "url": "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=03fae081958540dab35ce29a0440d6f8"
+    },
+    "businessNews": {
+        "url": "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=03fae081958540dab35ce29a0440d6f8"
+    },
+    "wallStreetJournal": {
+        "url": "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=03fae081958540dab35ce29a0440d6f8"
+    }
+    
+}

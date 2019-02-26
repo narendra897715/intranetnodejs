@@ -1,0 +1,22 @@
+var date = require('date-and-time');
+var dateFormat = require('dateformat');
+
+var format1 = 'YYYY/MM/DD HH:mm:ss';
+var format2 = 'yyyy-mm-dd';
+
+var convertFromStringToDate = (stringDate)=>{
+return date.parse(stringDate, format1);
+}
+var convertFromDateFormat = (dateObj)=>{
+    return dateFormat(dateObj, format2);
+    }
+var convertFromObjToTimestamp = (dateObj)=>{
+    return new Date(dateObj).getTime();
+}
+var convertFromMilliToDate = (milliDate)=>{
+    return new Date(milliDate);
+}
+module.exports = {convertFromStringToDate,convertFromObjToTimestamp,convertFromMilliToDate,convertFromDateFormat};
+
+
+

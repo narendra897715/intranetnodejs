@@ -1,0 +1,625 @@
+var { convertFromStringToDate, convertFromObjToTimestamp, convertFromMilliToDate, convertFromDateFormat, getDateforInput } = require('./../utils/date/DateFormat');
+var fs = require('fs');
+var axios = require('axios');
+var path = require('path');
+var { log4js } = require('./../utils/log-conf/logger');
+var logger = log4js.getLogger('error');
+var date = require('date-and-time');
+var EmailTemplate = require('./../mail/EmailTemplate');
+var SendMail = require('./../mail/SendMail');
+var NewsAndUpdatesDAO = require('./../dao/NewsAndUpdatesDAO');
+
+
+exports.fetchSubMenu = (callback) => {
+    NewsAndUpdatesDAO.getSubMenu((err, data) => {
+        if (err) {
+            callback(err);
+        }
+        callback(null, data);
+    })
+}
+exports.fetchCategoryList = (data,callback) => {
+    NewsAndUpdatesDAO.getCategory(data,(err, data) => {
+        if (err) {
+            callback(err);
+        }
+        callback(null, data);
+    })
+}
+
+exports.fetchCategoryListFilter = (callback) => {
+    NewsAndUpdatesDAO.getCategoryFilter((err, data) => {
+        if (err) {
+            callback(err);
+        }
+        callback(null, data);
+    })
+}
+
+exports.postAnUpdateService = (data, callback) => {
+    var currentDate = new Date(Date.now());
+    data.eventStartDate = convertFromMilliToDate(data.eventStartDate);
+    data.eventEndDate = convertFromMilliToDate(data.eventEndDate);
+    data.createdDate = currentDate;
+    data.updatedDate = currentDate;
+    if (data.newsAndUpdatesId == null) {
+
+        // var dateFromUI = new Date(data.eventStartDate);
+        //var modifiedData = data;
+        // date.parse(data.eventStartDate, 'YYYY/MM/DD HH:mm:ss');
+
+        //console.log(JSON.stringify(modifiedData,undefined,2));
+        // var pk = null;
+        NewsAndUpdatesDAO.postAnUpdate(data, (err, result) => {
+            if (err) {
+
+                callback(err);
+            } else {
+                // pk = result.recordset[0].id;
+                //iterate the loop to upload images
+                for (var i = 0; i < data.imageData.length; i++) {
+                    data.imageData[i].newsAndUpdatesId = result.recordset[0].id;
+                    data.imageData[i].createdDate = currentDate;
+                    data.imageData[i].updatedDate = currentDate;
+                    NewsAndUpdatesDAO.uploadImages(data.imageData[i], (err, result) => {
+
+                        //console.log('inside for loop',data.imageData[i].createdDate);
+                        if (err) {
+
+                            callback(err);
+                        } else {
+                            // pk= result.recordset[0].id;
+
+                        };
+                    })
+                }
+                //send email code for the org about post
+                sendEmailForPost(data.eventName);
+                return callback(undefined, 'Posted successfully');
+
+            };
+        });
+
+    } else {
+        console.log('inside else block');
+        NewsAndUpdatesDAO.updateThePost(data, (err, result) => {
+            if (err) {
+
+                callback(err);
+            } else {
+                console.log('after service');
+                callback(undefined, 'Updated successfully');
+            }
+        });
+    }
+
+
+};
+exports.uploadNewImage = async (data) => {
+
+    try {
+       
+        var currentDate = new Date();
+        data.createdDate = currentDate;
+        data.updatedDate = currentDate;
+
+        for (var i = 0; i < data.imageData.length; i++) {
+            data.imageData[i].newsAndUpdatesId = data.newsAndUpdatesId;
+            data.imageData[i].createdDate = currentDate;
+            data.imageData[i].updatedDate = currentDate;
+            await NewsAndUpdatesDAO.uploadImages(data.imageData[i])
+
+            //console.log('inside for loop',data.imageData[i].createdDate);
+        }
+        //send email code for the org about post
+        // sendEmailForPost(data.eventName);
+        return 'Posted successfully';
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+exports.getEventsInfo = (callback) => {
+    var eventsInfo = {};
+    NewsAndUpdatesDAO.getTodayHighlights((err, data) => {
+        if (err) {
+
+            callback(err);
+        }
+        if (data != null) {
+            for (var i = 0; i < data.length; i++) {
+                data[i].date = convertFromObjToTimestamp(data[i].date);
+            }
+        }
+        eventsInfo.todayHighlights = data;
+        // console.log(eventsInfo)
+        NewsAndUpdatesDAO.getUpcomingHighlights((err, data) => {
+            if (err) {
+
+                callback(err);
+            }
+            if (data != null) {
+                for (var i = 0; i < data.length; i++) {
+                    data[i].date = convertFromObjToTimestamp(data[i].date);
+                }
+            }
+            eventsInfo.upcomingHighlights = data;
+            NewsAndUpdatesDAO.getPreviousHighlights((err, data) => {
+                if (err) {
+
+                    callback(err);
+                }
+                if (data != null) {
+                    for (var i = 0; i < data.length; i++) {
+                        data[i].date = convertFromObjToTimestamp(data[i].date);
+                    }
+                }
+                eventsInfo.previousHighlights = data;
+                callback(null, eventsInfo);
+                //console.log(eventsInfo);
+            })
+        })
+    })
+
+
+
+};
+//convert this to async 
+exports.getIndustryNewsInfo = async (data) => {
+
+    try {
+        var dataFromProc = await NewsAndUpdatesDAO.getIndustryNews(data.apiId);
+        //preparing colors object
+        var colors = ['#f3e8ff', '#e7f2fe', '#edf5ed', '#fffef3'];
+        var finalData = [];
+
+        if (dataFromProc.length > 0) {
+
+            for (var i = 0; i < dataFromProc.length; i++) {
+                if (finalData.length >= dataFromProc.length) {
+                    break;
+                }
+                for (var t = 0; t < colors.length; t++) {
+                    finalData.push(colors[t]);
+                }
+            }
+            dataFromProc.forEach((elem, index) => elem.color = finalData[index]);
+
+            return dataFromProc;
+        } else {
+
+            // var obj = JSON.parse(fs.readFileSync(path.join(__dirname, '../utils/external/properties.json'), 'utf8'));
+
+            var response = await axios.get(data.link);
+            var articles = response.data.articles;
+            console.log(articles);
+            //console.log(convertFromDateFormat(new Date(articles[0].publishedAt)));
+            //console.log(typeof articles[0].publishedAt)
+            for (var i = 0; i < articles.length; i++) {
+                articles[i].ID = i + 1;
+                articles[i].sourceId = articles[i].source.id;
+                articles[i].sourceName = articles[i].source.name;
+                articles[i].publishedAt = convertFromDateFormat(new Date(articles[i].publishedAt));
+                articles[i].apiId = data.apiId;
+                NewsAndUpdatesDAO.saveIndustryNews(articles[i]);
+            }
+            response.data.articles = articles;
+            //save in DB
+            //return data form DB
+            var dataFromProc = await NewsAndUpdatesDAO.getIndustryNews(data.apiId);
+            for (var i = 0; i < dataFromProc.length; i++) {
+                if (finalData.length >= dataFromProc.length) {
+                    break;
+                }
+                for (var t = 0; t < colors.length; t++) {
+                    finalData.push(colors[t]);
+                }
+            }
+            dataFromProc.forEach((elem, index) => elem.color = finalData[index]);
+            return dataFromProc;
+
+        }
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+
+
+
+}
+
+var ObjectConversion = (data) => {
+    return new Promise((resolve, reject) => {
+        var finalData = [];
+        //modify the object to get in the desired form 
+        const unique = [...new Set(data.map((item) => item.newsAndUpdatesId))];
+        for (var i = 0; i < unique.length; i++) {
+            var filetredData = data.filter((res) => res.newsAndUpdatesId === unique[i]);
+            //console.log(filetredData); 
+            //finalData.push(filetredData); 
+            var mainObj = {};
+            var subObject = [];
+            for (var x = 0; x < filetredData.length; x++) {
+                mainObj.newsAndUpdatesId = filetredData[x].newsAndUpdatesId;
+                mainObj.categoryId = filetredData[x].categoryId;
+                mainObj.categoryName = filetredData[x].categoryName;
+                mainObj.eventName = filetredData[x].eventName;
+                mainObj.colourCode = filetredData[x].colourCode;
+                mainObj.eventDescription = filetredData[x].eventDescription;
+                mainObj.eventStartDate = convertFromObjToTimestamp(filetredData[x].eventStartDate);
+                mainObj.eventEndDate = convertFromObjToTimestamp(filetredData[x].eventEndDate);
+                mainObj.createdBy = filetredData[x].createdBy;
+                mainObj.createdByName = filetredData[x].createdByName;
+                mainObj.updatedBy = filetredData[x].updatedBy;
+                mainObj.updatedByName = filetredData[x].updatedByName;
+                mainObj.email = filetredData[x].email;
+                mainObj.skype = filetredData[x].skype;
+                mainObj.mail = filetredData[x].mail;
+                mainObj.createdDate = convertFromObjToTimestamp(filetredData[x].createdDate);
+                //console.log(`type of ${typeof filetredData[x].createdDate}`,convertFromObjToTimestamp(filetredData[x].createdDate));
+                mainObj.updatedDate = convertFromObjToTimestamp(filetredData[x].updatedDate)
+                mainObj.enteredTheDiscussion = filetredData[x].enteredTheDiscussion;
+                if (filetredData[x].imageId != 0) {
+                    var newObj = {};
+                    newObj.imageId = filetredData[x].imageId;
+                    newObj.imageName = filetredData[x].imageName;
+                    newObj.imageType = filetredData[x].imageType;
+                    newObj.image = filetredData[x].image;
+                    subObject.push(newObj);
+                }
+
+            }
+            mainObj.imageData = subObject;
+            finalData.push(mainObj);
+        }
+        resolve(finalData);
+    })
+};
+exports.fetchRecentlyPostedDetails = async (data) => {
+    try {
+        // console.log('inside try block');
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        //get records to display
+
+        var data = await NewsAndUpdatesDAO.getRecentlyPostedDetails(data.search, data.filterId,data.categoryId, startPos + 1, pageSize + startPos);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = await ObjectConversion(data);
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+
+        return obj;
+    } catch (error) {
+
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+
+exports.fetchEventDetails = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        var data = await NewsAndUpdatesDAO.getEventsDetails(data.search, data.filterId, startPos + 1, pageSize + startPos);
+        var finalData = await ObjectConversion(data);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = await ObjectConversion(data);
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  cout', pagesCount);
+        return obj;
+    } catch (error) {
+
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+
+exports.fetchManagementCommunicationDetails = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        var data = await NewsAndUpdatesDAO.getManagementCommunicationDetails(data.search, data.filterId, startPos + 1, pageSize + startPos);
+        var finalData = await ObjectConversion(data);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = await ObjectConversion(data);
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  cout', pagesCount);
+        return obj;
+    } catch (error) {
+
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+
+exports.fetchCEODetails = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        var data = await NewsAndUpdatesDAO.getCEODetails(data.search, data.filterId, startPos + 1, pageSize + startPos);
+        var finalData = await ObjectConversion(data);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = await ObjectConversion(data);
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  cout', pagesCount);
+        return obj;
+    } catch (error) {
+
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+
+
+exports.fetchAwardsDetails = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        var data = await NewsAndUpdatesDAO.getAwardsDetails(data.search, data.filterId, startPos + 1, pageSize + startPos);
+        var finalData = await ObjectConversion(data);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = await ObjectConversion(data);
+
+        var obj = {};
+        obj.result = finalData;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  cout', pagesCount);
+        return obj;
+    } catch (error) {
+
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+exports.fetchNewJoineesDetails = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        var data = await NewsAndUpdatesDAO.getNewJoineesDetails(data.search, data.filterId, startPos + 1, pageSize + startPos);
+        // var finalData = await ObjectConversion(data);
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+
+        var finalData = await ObjectConversion(data);
+
+        var obj = {};
+        obj.result = data;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+        console.log('page  cout', pagesCount);
+        return obj;
+    } catch (error) {
+
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+exports.fetchNewsAndUpdatesFilter = async () => {
+    try {
+
+        var data = await NewsAndUpdatesDAO.getNewsAndUpdatesFilter();
+        return data;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+
+exports.deleteImagePosted = async (id) => {
+    try {
+        const result = await NewsAndUpdatesDAO.deletePostedImage(id);
+        return result;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+}
+exports.fetchCalendarInfo = async (data) => {
+    try {
+        var result = await NewsAndUpdatesDAO.getCalendarInfo(data);
+
+        for (var i = 0; i < result.length; i++) {
+
+            result[i].start = convertFromObjToTimestamp(result[i].start);
+            //result[i].end = convertFromObjToTimestamp(result[i].end);
+        }
+        return result;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+var sendEmailForPost = async (eventName) => {
+    try {
+        const details = await NewsAndUpdatesDAO.getEmailDetailsForOrgData();
+        var template;
+        //for (var i = 0; i < details.length; i++) {
+        template = EmailTemplate.emailToOrgForPostUpdatePic('', eventName);
+        //console.log(details[i].email);
+        SendMail.sendMail('Merilytics_Team@merilytics.com', `Intranet Portal – New Company update: ${eventName}`, template);
+        //}
+        // console.log(details);
+        return details;
+
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+}
+
+exports.fetchRecentlyPosteddDetailsByID = async (id) => {
+    try {
+        var data = await NewsAndUpdatesDAO.getRecentlyPostedDetialsByID(id);
+        var finalData = ObjectConversion(data);
+        return finalData;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+}
+
+
+exports.fetchEventsDetailsByID = async (id) => {
+    try {
+        var data = await NewsAndUpdatesDAO.getEventsDetialsByID(id);
+        var finalData = ObjectConversion(data);
+        return finalData;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+}
+exports.fetchManagementCommunicationDetailsByID = async (id) => {
+    try {
+        var data = await NewsAndUpdatesDAO.getManagementCommunicationDetialsByID(id);
+        var finalData = ObjectConversion(data);
+        return finalData;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+}
+exports.fetchAwardsDetailsByID = async (id) => {
+    try {
+        var data = await NewsAndUpdatesDAO.getAwardsDetialsByID(id);
+        var finalData = ObjectConversion(data);
+        return finalData;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+}
+exports.fetchIndustryNewsFilter = async () => {
+    try {
+        var data = await NewsAndUpdatesDAO.getIndustryNewsFilter();
+        return data;
+    } catch (error) {
+        logger.fatal(error);
+        throw new Error(error);
+    }
+
+}
+//module.exports = { postAnUpdateService, getEventsInfo, getIndustryNewsInfo, fetchRecentlyPostedDetails, fetchEventDetails, fetchManagementCommunicationDetails, fetchAwardsDetails, fetchNewJoineesDetails, fetchNewsAndUpdatesFilter, deleteImagePosted, fetchCalendarInfo, uploadNewImage ,sendEmailForPost};

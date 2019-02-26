@@ -1,0 +1,144 @@
+var ResourcesDAO = require('../dao/ResourcesDAO');
+var { convertFromStringToDate, convertFromObjToTimestamp, convertFromMilliToDate } = require('./../utils/date/DateFormat');
+var { log4js } = require('./../utils/log-conf/logger');
+var logger = log4js.getLogger('error');
+
+exports.getResourcesPoliciesData = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        //get records to display
+        var data = await ResourcesDAO.getResourcesPolicies(data.search, data.categoryId, startPos + 1, pageSize + startPos);
+        for (var i = 0; i < data.length; i++) {
+            data[i].createdDate = convertFromObjToTimestamp(data[i].createdDate);
+            data[i].updatedDate = convertFromObjToTimestamp(data[i].updatedDate);
+        }
+
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+        // var finalData = await ObjectConversion(data, loginId);
+
+
+        var obj = {};
+        obj.result = data;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+
+        return obj;
+    } catch (error) {
+        console.log(error);
+        logger.fatal(error);
+        throw new Error(error);
+        // console.log(error.message);
+    }
+}
+
+
+exports.getResourcesFormsData = async (data) => {
+    try {
+        var pageNo = 0;
+        var startPos = 0;
+        var pagesCount = 0;
+        var rowCount = 0;
+        var pageSize = 0;
+
+        pageNo = data.pageNo;
+        pageSize = data.pageSize;
+        //get STart Position to begin the report
+        startPos = (pageNo * pageSize) - pageSize;
+        //get records to display
+        var data = await ResourcesDAO.getResourcesForms(data.search, data.categoryId, startPos + 1, pageSize + startPos);
+        for (var i = 0; i < data.length; i++) {
+            data[i].createdDate = convertFromObjToTimestamp(data[i].createdDate);
+            data[i].updatedDate = convertFromObjToTimestamp(data[i].updatedDate);
+        }
+
+        if (data.length != 0) {
+            var singleObj = data[0];
+            rowCount = singleObj.totalCount;
+        }
+        pagesCount = Math.ceil(rowCount / pageSize);
+
+        if (pagesCount == 0 || rowCount % pageSize < 0) {
+            pagesCount++;
+            //keep List, pageCount in request attributes
+        }
+        // var finalData = await ObjectConversion(data, loginId);
+
+
+        var obj = {};
+        obj.result = data;
+        obj.pages = pagesCount;
+        obj.rowCount = rowCount;
+
+        return obj;
+    } catch (error) {
+        // console.log(error);
+        logger.fatal(error);
+        throw new Error(error);
+        // console.log(error.message);
+    }
+}
+
+
+exports.getCategoryDropDown = async () => {
+    return await ResourcesDAO.getCategoryDropDown();
+};
+
+exports.getFileData = async (data) => {
+    return await ResourcesDAO.getFileByID(data.fileId);
+};
+
+exports.getUserApps = async (data)=>{
+    return await ResourcesDAO.getAppsData(data.employeeId);
+}
+
+exports.uploadNewFile = async (data) => {
+    try {
+        // return new Promise((resolve, reject) => {
+        var currentDate = new Date(Date.now());
+        data.createdDate = currentDate;
+        data.updatedDate = currentDate;
+
+        for (var i = 0; i < data.length; i++) {
+            data[i].createdDate = currentDate;
+            data[i].updatedDate = currentDate;
+            await ResourcesDAO.uploadFiles(data[i]);
+
+            //console.log('inside for loop',data.imageData[i].createdDate);
+        };
+        //send email code for the org about post
+        // sendEmailForPost(data.eventName);
+        return 'Uploaded successfully';
+    } catch (error) {
+         console.log(error);
+        logger.fatal(error);
+        throw new Error(error);
+        // console.log(error.message);
+    };
+
+
+    //  })
+
+};
+
+exports.deleteFileById = async (data) => {
+    return await ResourcesDAO.deleteFile(data.fileId);
+};
+

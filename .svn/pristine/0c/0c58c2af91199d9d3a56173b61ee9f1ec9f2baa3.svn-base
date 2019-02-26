@@ -1,0 +1,131 @@
+import { Component, OnInit } from '@angular/core';
+import {ImageProperties,IinteractionForumDailog,IinteractionForumEvent } from '../../app.interface';
+import {Itab} from '../../app.interface';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { BusinessLogicService } from '../../business-logic.service';
+import {NgForm} from '@angular/forms';
+@Component({
+  selector: 'app-interaction-forums-dailog',
+  templateUrl: './interaction-forums-dailog.component.html',
+  styleUrls: ['./interaction-forums-dailog.component.scss']
+})
+export class InteractionForumsDailogComponent implements OnInit {
+
+  file: any;
+  removable = true;
+  data_source: Itab[] = [];
+
+    interactionforumdailogobject : IinteractionForumDailog = {categoryId:null,eventDescription:null,eventName:null,eventEndDate:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId,eventStartDate:null,imageData:[],pollingOptions:null}
+  imageobject: ImageProperties [] = [];
+
+  constructor(
+    public dialogRef: MatDialogRef<InteractionForumsDailogComponent>,private businesslogic: BusinessLogicService,
+    ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+  openInput() {
+    // your can use ElementRef for this later
+    document.getElementById('upload').click();
+  }
+
+  onFileChange(evt) {
+    this.imageobject = [];
+    const files = evt.target.files;
+
+
+  if (files) {
+    for (let i = 0; i < files.length; i++) {
+      this.file = files[i];
+      const reader = new FileReader();
+      reader.onload = this._handleReaderLoaded.bind(this, files.length, i, files[i]);
+      reader.readAsBinaryString(this.file);
+  }
+}
+}
+
+_handleReaderLoaded(lengthoffiles, ivalue, filevalue, readerEvt) {
+
+   const binaryString = readerEvt.target.result;
+             this.imageobject.push({'imageName': filevalue.name, 'imageType': filevalue.type, 'Image': btoa(binaryString),
+             'updatedBy':  this.businesslogic.employeeId, 'createdBy':  this.businesslogic.employeeId});
+             if (ivalue + 1 === lengthoffiles) {
+              this.addimage();
+             }
+  }
+
+  addimage() {
+    this.interactionforumdailogobject.imageData = this.imageobject;
+  }
+  Options : any;
+  optionnumber = 2; 
+  ngOnInit() {
+    // this.form = this.formBuilder.group({
+    //   categoryId: [null, Validators.required],
+    //   eventStartDate: [null],
+    //   eventEndDate: [null],
+    //   eventName: [null, Validators.required],
+    //   eventDescription: [null, Validators.required],
+    //   updatedBy: [21375],
+    //   createdBy: [21375],
+    //   imageData: [[]],
+    //   pollingOptions : [[]]
+    // });
+    this.Options  = [{optionumber:1,optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId},{optionumber:2,optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId}];
+
+    this.getCategoryList();
+  }
+  getCategoryList(){
+    this.businesslogic.get('interaction_forums/getCategoryDropDown').subscribe((response: any) => {
+   
+    this.data_source = response;
+     });
+  }
+ AddOption(Option) {
+   console.log(Option);
+  this.optionnumber = this.optionnumber +1;
+   this.Options.push({optionumber:this.optionnumber,optionDescription:null,createdBy: this.businesslogic.employeeId,updatedBy: this.businesslogic.employeeId})
+  // this.Options = Option;
+ }
+
+ deleteoption(option): void {
+
+  const index = this.Options.indexOf(option);
+  if (index >= 0) {
+    this.optionnumber = this.optionnumber-1;
+    this.Options.splice(index, 1);
+   
+  }
+}
+ private guid() {
+  let uniqueId = Math.random().toString(36).substring(2) 
+     + (new Date()).getTime().toString(36);
+  return uniqueId;
+}
+  postUpdate(postForm:NgForm) {
+    this.interactionforumdailogobject.eventStartDate = Date.parse(this.interactionforumdailogobject.eventStartDate);
+    this.interactionforumdailogobject.eventEndDate = Date.parse(this.interactionforumdailogobject.eventEndDate);
+    if(this.interactionforumdailogobject.categoryId == 7){
+      this.interactionforumdailogobject.pollingOptions = this.Options;
+    }
+    else{
+      this.interactionforumdailogobject.pollingOptions = null;
+    }
+    
+    this.businesslogic.postUpdate('interaction_forums/postAnDiscussion', this.interactionforumdailogobject).subscribe((response: any) => {
+    this.dialogRef.close();
+          });
+  }
+
+     remove(image): void {
+           const index = this.imageobject.indexOf(image);
+       
+           if (index >= 0) {
+             this.imageobject.splice(index, 1);
+             this.interactionforumdailogobject.imageData = this.imageobject;
+           }
+         }
+
+
+}

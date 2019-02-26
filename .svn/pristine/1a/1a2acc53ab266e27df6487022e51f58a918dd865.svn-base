@@ -1,0 +1,64 @@
+<div fxFlex fxLayout="column">
+    <div fxFlex="10" fxLayout="row"  class="md-elevation-z3 navbar">
+      <div fxFlex="20" class="txt" fxLayoutAlign="start center">
+          <i class="fa fa-bars" aria-hidden="true" (click)="opensidnav()"  fxHide.md='true' fxHide.lg='true' fxHide.xl='true'style="margin-right:5px"></i>
+
+        <img [src]="'../assets/Intranet-Icons/Intranet.svg'" fxHide.xs='true' width="180" height="50" >
+      </div>
+      <div fxLayoutAlign="space-between center" fxFlex="40" fxHide.xs='true' fxHide.sm='true'  fxFlex.md="60" >
+        <div fxLayout="row" *ngFor="let data of tabsdata" style="height:100%">
+          <div fxLayout="row" fxFlex fxLayoutAlign="center center" routerLink='{{data.url}}'  class="navinactive tab-text-style"  routerLinkActive="navactive"  (click)="redirect(data.url)">
+            {{data.name}} 
+          </div>
+
+        </div>
+      </div>
+      <div fxFlex="40" fxLayoutAlign="end center" fxFlex.md="20">
+        <div class="clr">Hi, {{userdata.firstName}} </div>
+        <img [src]="'../assets/Intranet-Icons/user-filled.svg'" style="cursor:pointer"  [matMenuTriggerFor]="menu" width="25" height="25"> 
+       
+<mat-menu #menu="matMenu" yPosition="above" [overlapTrigger]="false">
+  <div mat-menu-item (click)="changepassword()">Change Password</div>
+  <div mat-menu-item (click)="callLogoutRequest()">Logout</div>
+  
+  <div mat-menu-item style="cursor:default">Help<br>
+    <span> <a style="text-decoration: underline;" href="mailto:appsupport@merilytics.com" target="_top" >appsupport@merilytics.com</a></span>
+   
+  </div>
+</mat-menu>
+      </div>
+      
+    </div>
+
+    <div  fxFlex fxLayout="column" style="overflow:auto;" >
+      <div class="sidenav" [style.width]="sidenavwidth" fxLayout="column">
+          
+          <div  fxLayoutAlign="end end">
+              <mat-icon (click)="closeNav()" class="color" style="cursor: pointer" fxLayoutAlign="end end">&#xE5CD;</mat-icon>
+          </div>
+          <mat-nav-list>
+           
+              
+              <img [src]="'../assets/Intranet-Icons/Intranet.svg'" width="180" height="50" >
+              <a mat-list-item routerLink="." *ngFor="let data of tabsdata" style="color:#111" (click)="redirect(data.url)">{{data.name}}</a>
+            </mat-nav-list>
+        </div>
+        <router-outlet style="display: none;"></router-outlet>
+      
+    </div>
+  
+    
+        <footer>
+            <div class="footer">
+              <div fxFlex fxLayout="row" fxLayoutAlign="start start">
+                <div>Copyright Merilytics Inc. 2018. All rights reserved. &nbsp;</div>
+                <!-- <a target="_blank" fxLayout="row" fxLayoutAlign="center center" href="https://merilytics.com/">
+                  <img alt="Merilytics" [src]="'../assets/Merilytics.jpg'" width="120">
+                </a>  -->
+              </div>
+            </div>
+          </footer>
+    
+  
+</div>
+ <div #message></div> 

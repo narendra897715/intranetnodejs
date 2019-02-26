@@ -1,0 +1,68 @@
+import { Component, OnInit, Inject, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Itab } from '../app.interface';
+import { BusinessLogicService } from '../business-logic.service';
+import { IPostupdateobject } from '../app.interface';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
+
+@Component({
+  selector: 'app-editpopupmodal',
+  templateUrl: './editpopupmodal.component.html',
+  styleUrls: ['./editpopupmodal.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+export class EditpopupmodalComponent implements OnInit {
+  onEdit = new EventEmitter();
+  submenu: Itab[];
+  form: FormGroup;
+  constructor(
+    public dialogRef: MatDialogRef<EditpopupmodalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private businesslogic: BusinessLogicService,
+    private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    console.log(this.data);
+    this.businesslogic.get('news&updates/getCategoryList').subscribe((response: any) => {
+      this.submenu = response;
+    });
+    this.form = this.formBuilder.group({
+      categoryId: [this.data.categoryId ? this.data.categoryId : null, Validators.required],
+      eventStartDate: [this.data.eventStartDate ? this.data.eventStartDate : null, Validators.required],
+      eventEndDate: [this.data.eventEndDate ? this.data.eventEndDate : null, Validators.required],
+      // tslint:disable-next-line:max-line-length
+      eventName: [this.data.eventName ? this.data.eventName : null,  [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/(?!^\d+$)^.+$/)]],
+      // tslint:disable-next-line:max-line-length
+      eventDescription: [this.data.eventDescription ? this.data.eventDescription : null, [Validators.required, Validators.maxLength(5000), Validators.pattern(/[a-zA-Z0-9^]/), Validators.pattern(/(?!^\d+$)^.+$/)]],
+      updatedBy: [21375],
+      createdBy: [21375],
+      imageData: [[]],
+      categoryName: [this.data.categoryName ? this.data.categoryName : null],
+      colourCode: [this.data.colourCode ? this.data.colourCode : null],
+      createdByName: [this.data.createdByName ? this.data.createdByName : null],
+      createdDate: [this.data.createdDate ? this.data.createdDate : null],
+      enteredTheDiscussion: [this.data.enteredTheDiscussion ? this.data.enteredTheDiscussion : null],
+      newsAndUpdatesId: [this.data.newsAndUpdatesId ? this.data.newsAndUpdatesId : null],
+      updatedByName: [this.data.updatedByName ? this.data.updatedByName : null],
+      updatedDate: [this.data.updatedDate ? this.data.updatedDate : null]
+    });
+  }
+  postUpdate() {
+
+    this.form.value.eventStartDate = Date.parse(this.form.value.eventStartDate);
+    this.form.value.eventEndDate = Date.parse(this.form.value.eventEndDate);
+    this.businesslogic.postUpdate('news&updates/postAnUpdate', this.form.value).subscribe((response: any) => {
+      this.onEdit.emit(this.data.newsAndUpdatesId);
+    });
+    this.dialogRef.close();
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
